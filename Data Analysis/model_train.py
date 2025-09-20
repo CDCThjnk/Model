@@ -85,6 +85,8 @@ model = Word2Vec(
     epochs=200
 )
 
+model.save("word2vec_people_categories.model")
+
 # -------------------------
 # Build per-person embeddings by category and a concatenated feature
 # -------------------------
@@ -110,7 +112,7 @@ for rec in records:
 
 # Example: inspect the single provided record
 df = pd.DataFrame(rows)
-
+df.to_pickle("astronauts_embeddings.pkl")
 
 # ---------- Example user profile (replace later with real user data) ----------
 user_profile = {
