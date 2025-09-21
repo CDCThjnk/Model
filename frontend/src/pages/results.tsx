@@ -646,9 +646,9 @@ export default function Results() {
                 <motion.div
                   className="w-6 h-6 bg-accent-gold rounded-full mx-auto flex items-center justify-center border-2 border-accent-gold absolute"
                   style={{ 
-                    top: '4rem', 
+                    top: 'calc(4rem - 12px)', 
                     left: '50%', 
-                    transform: 'translateX(-50%) translateY(-50%)',
+                    transform: 'translateX(-50%)',
                     zIndex: 20
                   }}
                   initial={{ scale: 0 }}
@@ -693,9 +693,9 @@ export default function Results() {
                 <motion.div
                   className="w-6 h-6 bg-space-blue rounded-full mx-auto flex items-center justify-center border-2 border-space-blue absolute"
                   style={{ 
-                    top: '4rem', 
+                    top: 'calc(4rem - 12px)', 
                     left: '50%', 
-                    transform: 'translateX(-50%) translateY(-50%)',
+                    transform: 'translateX(-50%)',
                     zIndex: 20
                   }}
                   initial={{ scale: 0 }}

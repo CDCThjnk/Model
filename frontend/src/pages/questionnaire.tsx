@@ -121,6 +121,10 @@ export default function Questionnaire() {
   const totalSteps = 7
 
   const onSubmit = async (data: FormData) => {
+    console.log('=== QUESTIONNAIRE SUBMISSION START ===')
+    console.log('Current step:', currentStep, 'Total steps:', totalSteps)
+    console.log('Raw form data:', data)
+    
     // Allow submission on the last two steps (hobbies or selfie)
     if (currentStep < totalSteps - 1) {
       console.log('Not on last step, current step:', currentStep, 'total steps:', totalSteps)
@@ -143,8 +147,18 @@ export default function Questionnaire() {
         languages: data.languages.split(',').map(item => item.trim()).filter(item => item),
         selfie: data.selfie || null // Make selfie truly optional
       }
+      
+      console.log('Transformed user profile:', userProfile)
+      
+      const apiUrl = '/api/similar_astronauts'
+      console.log('Making API call to:', apiUrl)
+      console.log('Full URL will be:', window.location.origin + apiUrl)
+      console.log('Request payload:', {
+        user_profile: userProfile,
+        top_k: 3
+      })
 
-      const response = await fetch('http://127.0.0.1:3001/similar_astronauts', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -154,22 +168,34 @@ export default function Questionnaire() {
           top_k: 3
         }),
       })
+      
+      console.log('API Response status:', response.status, response.statusText)
+      console.log('API Response headers:', Object.fromEntries(response.headers.entries()))
 
       if (!response.ok) {
-        throw new Error('Failed to get astronaut matches')
+        const errorText = await response.text()
+        console.error('API Error response:', errorText)
+        throw new Error(`Failed to get astronaut matches: ${response.status} ${response.statusText}`)
       }
 
       const result = await response.json()
+      console.log('API Response data:', result)
       
       // Store results in sessionStorage for results page
+      console.log('Storing results in sessionStorage')
       sessionStorage.setItem('astronautMatches', JSON.stringify(result))
       sessionStorage.setItem('userProfile', JSON.stringify(userProfile))
       
+      console.log('Navigating to results page')
       router.push('/results')
     } catch (error) {
-      console.error('Error:', error)
+      console.error('=== SUBMISSION ERROR ===')
+      console.error('Error object:', error)
+      console.error('Error message:', error instanceof Error ? error.message : String(error))
+      console.error('Error stack:', error instanceof Error ? error.stack : 'No stack available')
       toast.error('Failed to process your questionnaire. Please try again.')
     } finally {
+      console.log('=== SUBMISSION END ===')
       setIsSubmitting(false)
     }
   }

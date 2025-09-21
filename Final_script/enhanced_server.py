@@ -167,10 +167,17 @@ def generate_career_advice(user_profile, astronaut_match, similarity_score):
 # API Routes
 @app.route('/similar_astronauts', methods=['POST'])
 def similar_astronauts():
+    print('=== BACKEND API CALL RECEIVED ===')
+    print(f'Request method: {request.method}')
+    print(f'Request path: {request.path}')
+    print(f'Request headers: {dict(request.headers)}')
     try:
         data = request.get_json(silent=True) or {}
+        print(f'Request data: {data}')
         user_profile = data.get('user_profile')
         top_k = data.get('top_k', 3)
+        print(f'User profile: {user_profile}')
+        print(f'Top K: {top_k}')
 
         if not isinstance(user_profile, dict):
             return jsonify({"error": "user_profile must be a JSON object"}), 400
