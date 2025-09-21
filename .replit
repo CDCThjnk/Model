@@ -54,10 +54,6 @@ externalPort = 3001
 localPort = 5000
 externalPort = 80
 
-[[ports]]
-localPort = 35529
-externalPort = 3000
-
 [deployment]
 deploymentTarget = "vm"
 run = ["bash", "-c", "cd Final_script && python enhanced_server.py & cd frontend && npm start && wait"]

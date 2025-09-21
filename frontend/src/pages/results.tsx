@@ -552,7 +552,7 @@ export default function Results() {
         ctx.fillText(category, x + Math.cos(angle) * 40, y + Math.sin(angle) * 40)
         
         // Draw values at the end of each axis (positioned much further out)
-        const value = (values[index] || 0) * animationProgress
+        const value = (values[index] || 0) * 2 * animationProgress
         ctx.fillStyle = '#F59E0B'
         ctx.font = 'bold 20px Inter'
         ctx.fillText(`${(value * 100).toFixed(0)}%`, x + Math.cos(angle) * 100, y + Math.sin(angle) * 100)
@@ -562,7 +562,7 @@ export default function Results() {
       ctx.beginPath()
       categories.forEach((category, index) => {
         const angle = (index * 2 * Math.PI) / categories.length - Math.PI / 2
-        const value = (values[index] || 0) * animationProgress // Apply animation progress
+        const value = (values[index] || 0) * 2 * animationProgress // Apply animation progress and multiply by 2
         const x = centerX + Math.cos(angle) * radius * value
         const y = centerY + Math.sin(angle) * radius * value
         
