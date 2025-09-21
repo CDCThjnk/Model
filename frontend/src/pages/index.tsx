@@ -2,38 +2,45 @@ import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { Rocket } from 'lucide-react'
 import Link from 'next/link'
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 
-// Animated stars background with memoized positions
+// Animated stars background with consistent positions
 const StarsBackground = () => {
-  // Memoize star positions so they don't change on every render
+  const [isClient, setIsClient] = useState(false)
+  
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+  
+  // Use deterministic positioning based on fixed seeds
   const starPositions = useMemo(() => {
+    const generateStar = (seed: number) => {
+      const left = ((seed * 37) % 100)
+      const top = ((seed * 73) % 100)
+      return { left, top }
+    }
+    
     const largeStars = Array.from({ length: 20 }, (_, i) => ({
       id: `large-${i}`,
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      duration: 15 + Math.random() * 8,
-      delay: Math.random() * 8,
+      ...generateStar(i + 1),
     }))
     
     const mediumStars = Array.from({ length: 40 }, (_, i) => ({
       id: `medium-${i}`,
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      duration: 12 + Math.random() * 6,
-      delay: Math.random() * 6,
+      ...generateStar(i + 21),
     }))
     
     const smallStars = Array.from({ length: 100 }, (_, i) => ({
       id: `small-${i}`,
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      duration: 8 + Math.random() * 6,
-      delay: Math.random() * 10,
+      ...generateStar(i + 61),
     }))
     
     return { largeStars, mediumStars, smallStars }
   }, []) // Empty dependency array - positions only calculated once
+  
+  if (!isClient) {
+    return null // Don't render on server to avoid hydration mismatch
+  }
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none bg-black">
