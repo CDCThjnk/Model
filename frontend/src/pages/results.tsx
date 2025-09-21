@@ -180,11 +180,11 @@ export default function Results() {
     for (let i = 0; i < astronauts.length; i++) {
       const astronaut = astronauts[i]
       try {
-        const response = await fetch('http://127.0.0.1:3001/generate_biography', {
+        const response = await fetch('/api/generate_biography', {
         method: 'POST',
           headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            astronaut_name: astronaut.name,
+            astronaut_name: astronaut['Profile.Name'] || astronaut.name,
             nationality: astronaut['Profile.Nationality'] || astronaut.nationality,
             mission_count: astronaut['Profile.Lifetime Statistics.Mission count'],
             mission_duration: astronaut['Profile.Lifetime Statistics.Mission duration'],
@@ -216,11 +216,11 @@ export default function Results() {
     for (let i = 0; i < astronauts.length; i++) {
       const astronaut = astronauts[i]
       try {
-        const response = await fetch('http://127.0.0.1:3001/generate_career_timeline', {
+        const response = await fetch('/api/generate_career_timeline', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            astronaut_name: astronaut.name,
+            astronaut_name: astronaut['Profile.Name'] || astronaut.name,
             mission_count: astronaut['Profile.Lifetime Statistics.Mission count'],
             mission_duration: astronaut['Profile.Lifetime Statistics.Mission duration'],
             role: astronaut['Mission.Role']
@@ -741,11 +741,11 @@ export default function Results() {
               <div className="text-center mb-6">
                 <div className="w-24 h-24 bg-gradient-to-r from-space-blue to-accent-gold rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl font-bold text-white">
-                    {(astronaut.name || 'Unknown').split(' ').map(n => n[0]).join('')}
+                    {(astronaut['Profile.Name'] || astronaut.name || 'Unknown').split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  {astronaut.name || 'Unknown Astronaut'}
+                  {astronaut['Profile.Name'] || astronaut.name || 'Unknown Astronaut'}
                 </h3>
                 <p className="text-accent-gold font-semibold">
                   {Math.round((astronaut.similarity || 0) * 100)}% Match
@@ -880,7 +880,7 @@ export default function Results() {
             <CareerTimeline
               astronautTimeline={matches?.top_astronauts[0]?.careerTimeline || []}
               userTimeline={userProfile ? generateUserCareerSuggestions(userProfile) : []}
-              astronautName={matches?.top_astronauts[0]?.name || 'Astronaut'}
+              astronautName={matches?.top_astronauts[0]?.['Profile.Name'] || matches?.top_astronauts[0]?.name || 'Astronaut'}
             />
             
             {/* Summary */}
