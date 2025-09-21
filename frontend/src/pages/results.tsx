@@ -321,43 +321,42 @@ export default function Results() {
     return finalSuggestions // Always return exactly 4 suggestions
   }
 
-  // Simple face swap processing (background)
+  // Professional face swap processing using backend API with OpenCV
   const processFaceSwap = async (selfieData: string) => {
-    if (!selfieData) return null
+    if (!selfieData) {
+      console.log('📷 No selfie data provided for face swap')
+      return null
+    }
     
     try {
-      // Create a simple astronaut image by adding a space helmet overlay
-      // This is a basic implementation - in production you'd use a proper face swap API
-      const canvas = document.createElement('canvas')
-      const ctx = canvas.getContext('2d')
-      if (!ctx) return null
+      console.log('🎭 Starting face swap API call...')
+      console.log('📏 Selfie data length:', selfieData.length, 'characters')
       
-      // Set canvas size
-      canvas.width = 400
-      canvas.height = 400
+      const response = await fetch('/api/process_face_swap', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          selfie: selfieData
+        }),
+      })
       
-      // Create a simple space helmet effect
-      ctx.fillStyle = '#1a1a2e'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      console.log('🔍 Face swap API response status:', response.status)
       
-      // Add some space-themed elements
-      ctx.fillStyle = '#0f3460'
-      ctx.fillRect(50, 50, 300, 300)
-      
-      // Add helmet visor
-      ctx.strokeStyle = '#ffd700'
-      ctx.lineWidth = 4
-      ctx.strokeRect(75, 75, 250, 250)
-      
-      // Add some text
-      ctx.fillStyle = '#ffd700'
-      ctx.font = '20px Arial'
-      ctx.textAlign = 'center'
-      ctx.fillText('Astronaut Ready!', canvas.width / 2, canvas.height / 2)
-      
-      return canvas.toDataURL('image/png')
+      if (response.ok) {
+        const result = await response.json()
+        console.log('✅ Face swap API success!')
+        console.log('📤 Result image length:', result.astronaut_image?.length || 0, 'characters')
+        return result.astronaut_image
+      } else {
+        console.log('❌ Face swap API failed with status:', response.status)
+        const errorText = await response.text()
+        console.log('📜 Error details:', errorText)
+        return null
+      }
     } catch (error) {
-      console.error('Error processing face swap:', error)
+      console.error('❌ Face swap processing error:', error)
       return null
     }
   }

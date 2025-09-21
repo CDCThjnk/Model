@@ -154,7 +154,8 @@ def find_similar_astronauts(user_profile: Dict[str, Any],
                         break
                         
                 astro = df.iloc[idx].to_dict()
-                astro_name = astro.get('Profile.Name', '')
+                # Fix: Use 'name' field which exists in the data, not 'Profile.Name'
+                astro_name = astro.get('name', '')
                 
                 if astronauts_checked <= 5:  # Debug first 5
                     print(f'   Checking astronaut {astronauts_checked}: "{astro_name}" (similarity: {sims[idx]:.4f})')
@@ -191,6 +192,8 @@ def find_similar_astronauts(user_profile: Dict[str, Any],
                                 
                         seen_names.add(astro_name)
                         astro["similarity"] = float(sims[idx])
+                        # Keep 'name' field and add 'Profile.Name' for compatibility with frontend
+                        astro['Profile.Name'] = astro_name
                         astro = {k: v for k, v in astro.items() if k != "embedding_concat"}
                         top_astronauts.append(astro)
         

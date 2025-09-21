@@ -14,7 +14,7 @@ except ImportError:
     PIL_AVAILABLE = False
     log.warning("PIL/Pillow not available, face swap will use fallback")
 
-def process_face_swap(selfie_base64: str, astronaut_suit_path: str = "frontend/public/astronaut-suit.png") -> str:
+def process_face_swap(selfie_base64: str, astronaut_suit_path: str = None) -> str:
     """
     Process face swapping by detecting face in selfie and overlaying it onto astronaut suit helmet visor.
     
@@ -25,6 +25,16 @@ def process_face_swap(selfie_base64: str, astronaut_suit_path: str = "frontend/p
     Returns:
         Base64 encoded result image or None if processing fails
     """
+    # Set default path relative to project root
+    if astronaut_suit_path is None:
+        import os
+        astronaut_suit_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'frontend', 'public', 'astronaut-suit.png')
+    
+    print(f'\n🎭 === FACE SWAP PROCESSING START ===')
+    print(f'📷 Selfie data provided: {"✅ Yes" if selfie_base64 else "❌ No"}')
+    print(f'🛠️  Astronaut suit path: {astronaut_suit_path}')
+    if selfie_base64:
+        print(f'📏 Data length: {len(selfie_base64)} characters')
     try:
         # Check if PIL is available
         if not PIL_AVAILABLE:
@@ -156,9 +166,24 @@ def encode_image_to_base64(cv_image):
 
 def encode_astronaut_suit_fallback():
     """Return base64 encoded astronaut suit image as fallback."""
-    try:
-        with open("frontend/public/astronaut-suit.png", "rb") as f:
-            suit_data = base64.b64encode(f.read()).decode('utf-8')
-            return f"data:image/png;base64,{suit_data}"
-    except Exception:
-        return None
+    import os
+    # Try multiple possible paths for astronaut suit
+    possible_paths = [
+        os.path.join(os.path.dirname(os.path.dirname(__file__)), 'frontend', 'public', 'astronaut-suit.png'),
+        'frontend/public/astronaut-suit.png',
+        os.path.join('frontend', 'public', 'astronaut-suit.png')
+    ]
+    
+    for path in possible_paths:
+        try:
+            print(f'🔍 Trying astronaut suit path: {path}')
+            with open(path, "rb") as f:
+                suit_data = base64.b64encode(f.read()).decode('utf-8')
+                print(f'✅ Successfully loaded astronaut suit from: {path}')
+                return f"data:image/png;base64,{suit_data}"
+        except Exception as e:
+            print(f'❌ Failed to load from {path}: {e}')
+            continue
+    
+    print('❌ Could not find astronaut suit image in any expected location')
+    return None
