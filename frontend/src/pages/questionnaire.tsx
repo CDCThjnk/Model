@@ -167,7 +167,7 @@ export default function Questionnaire() {
       console.log('Full URL will be:', window.location.origin + apiUrl)
       console.log('Request payload:', {
         user_profile: userProfile,
-        top_k: 3
+        top_k: 2
       })
 
       const response = await fetch(apiUrl, {

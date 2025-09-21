@@ -763,7 +763,7 @@ export default function Results() {
         </motion.h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {matches?.top_astronauts.slice(0, 3).map((astronaut, index) => (
+          {matches?.top_astronauts.slice(0, 2).map((astronaut, index) => (
             <motion.div
               key={index}
               className="card p-8"
