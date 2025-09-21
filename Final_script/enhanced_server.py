@@ -20,7 +20,7 @@ logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
 # Configuration
-CSV_PATH = '/Users/joephelps/CDC2025/Model/Data Analysis/astronauts.csv'
+CSV_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'Data Analysis', 'astronauts.csv')
 
 # OpenAI configuration (you'll need to set your API key)
 openai.api_key = os.getenv('OPENAI_API_KEY', 'your-openai-api-key-here')
@@ -353,4 +353,5 @@ def health_check():
     return jsonify({"status": "healthy", "timestamp": datetime.now().isoformat()})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=3001, host='0.0.0.0')
+    port = int(os.environ.get('PORT', 3001))
+    app.run(debug=True, port=port, host='0.0.0.0')

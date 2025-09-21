@@ -9,7 +9,21 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://127.0.0.1:3001/:path*',
+        destination: 'http://localhost:3001/:path*',
+      },
+    ]
+  },
+  // Enable all hosts for Replit proxy environment
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'ALLOWALL',
+          },
+        ],
       },
     ]
   },
