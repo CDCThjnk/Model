@@ -889,10 +889,11 @@ export default function Results() {
                 <img
                   src={faceSwapImage}
                   alt="Your astronaut selfie"
-                  className="w-full h-64 object-cover rounded-lg mb-4"
+                  className="w-full max-w-md mx-auto object-contain rounded-lg mb-4"
+                  style={{ height: 'auto', minHeight: '300px' }}
                 />
               ) : (
-                <div className="w-full h-64 bg-white/10 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-full max-w-md mx-auto bg-white/10 rounded-lg flex items-center justify-center mb-4" style={{ height: '300px' }}>
                   <Camera className="w-12 h-12 text-white/50" />
                 </div>
               )}
