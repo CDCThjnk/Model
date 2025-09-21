@@ -23,7 +23,7 @@ log = logging.getLogger(__name__)
 CSV_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'Data Analysis', 'astronauts.csv')
 
 # OpenAI configuration (you'll need to set your API key)
-openai.api_key = os.getenv('OPENAI_API_KEY', 'your-openai-api-key-here')
+openai.api_key = os.getenv('OPENAI_API_KEY', None)
 
 
 # Name matching functions (existing code)
@@ -111,6 +111,18 @@ def extract_names(items: List[Dict[str, Any]]) -> List[str]:
 def generate_career_advice(user_profile, astronaut_match, similarity_score):
     """Generate AI-powered career advice using OpenAI"""
     
+    # Check if OpenAI API key is available
+    if not openai.api_key:
+        log.info("OpenAI API key not configured, using fallback career advice")
+        return f"""
+        Based on your {similarity_score:.1%} similarity with {astronaut_match.get('name', 'this astronaut')}, 
+        you share a strong foundation for a space career. Your background in {', '.join(user_profile.get('occupations', ['your field']))} 
+        aligns well with the astronaut's path. Consider developing skills in leadership, technical expertise, 
+        and teamwork - all crucial for space missions. Pursue advanced education in STEM fields, gain 
+        experience in high-pressure environments, and consider military or research positions that build 
+        the resilience and expertise needed for space exploration.
+        """
+    
     try:
         prompt = f"""
         You are an expert career counselor specializing in space careers and astronaut development. 
@@ -154,7 +166,7 @@ def generate_career_advice(user_profile, astronaut_match, similarity_score):
         return response.choices[0].message.content.strip()
         
     except Exception as e:
-        log.error(f"Error generating career advice: {e}")
+        log.error(f"Error generating career advice with OpenAI: {e}")
         return f"""
         Based on your {similarity_score:.1%} similarity with {astronaut_match.get('name', 'this astronaut')}, 
         you share a strong foundation for a space career. Your background in {', '.join(user_profile.get('occupations', ['your field']))} 
@@ -262,30 +274,35 @@ def generate_biography():
         mission_duration = data.get('mission_duration', 0)
         role = data.get('role', 'Astronaut')
         
-        try:
-            prompt = f"""
-            Write a brief, inspiring biography (2-3 sentences) for astronaut {astronaut_name} from {nationality}.
-            They have {mission_count} space missions and {mission_duration} days in space.
-            Their role was {role}.
-            Make it engaging and highlight their achievements.
-            """
-            
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "You are a space historian writing inspiring astronaut biographies."},
-                    {"role": "user", "content": prompt}
-                ],
-                max_tokens=150,
-                temperature=0.7
-            )
-            
-            biography = response.choices[0].message.content.strip()
-            
-        except Exception as e:
-            log.error(f"Error generating biography with OpenAI: {e}")
-            # Fallback biography
+        # Check if OpenAI API key is available
+        if not openai.api_key:
+            log.info("OpenAI API key not configured, using fallback biography")
             biography = f"{astronaut_name} is a distinguished astronaut from {nationality} with {mission_count} space missions and {mission_duration} days in space. Their role as {role} demonstrates their expertise and dedication to space exploration."
+        else:
+            try:
+                prompt = f"""
+                Write a brief, inspiring biography (2-3 sentences) for astronaut {astronaut_name} from {nationality}.
+                They have {mission_count} space missions and {mission_duration} days in space.
+                Their role was {role}.
+                Make it engaging and highlight their achievements.
+                """
+                
+                response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=[
+                        {"role": "system", "content": "You are a space historian writing inspiring astronaut biographies."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    max_tokens=150,
+                    temperature=0.7
+                )
+                
+                biography = response.choices[0].message.content.strip()
+                
+            except Exception as e:
+                log.error(f"Error generating biography with OpenAI: {e}")
+                # Fallback biography
+                biography = f"{astronaut_name} is a distinguished astronaut from {nationality} with {mission_count} space missions and {mission_duration} days in space. Their role as {role} demonstrates their expertise and dedication to space exploration."
         
         return jsonify({"biography": biography})
         
@@ -306,40 +323,9 @@ def generate_career_timeline():
         mission_duration = data.get('mission_duration', 0)
         role = data.get('role', 'Astronaut')
         
-        try:
-            prompt = f"""
-            Create 5 career milestones for astronaut {astronaut_name} who had {mission_count} missions and {mission_duration} days in space.
-            Each milestone should be exactly 10 words or less.
-            Include: selection, training, first mission, advancement, and final achievement.
-            Return as a JSON array of strings.
-            """
-            
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "You are a space career analyst. Return only valid JSON arrays."},
-                    {"role": "user", "content": prompt}
-                ],
-                max_tokens=200,
-                temperature=0.7
-            )
-            
-            timeline_text = response.choices[0].message.content.strip()
-            # Try to parse as JSON, fallback if it fails
-            try:
-                timeline = json.loads(timeline_text)
-            except:
-                timeline = [
-                    "Selected for astronaut training program",
-                    "Completed intensive space mission preparation", 
-                    "First space mission launch",
-                    "Advanced to senior astronaut role",
-                    "Retired from active space missions"
-                ]
-            
-        except Exception as e:
-            log.error(f"Error generating timeline with OpenAI: {e}")
-            # Fallback timeline
+        # Check if OpenAI API key is available
+        if not openai.api_key:
+            log.info("OpenAI API key not configured, using fallback timeline")
             timeline = [
                 "Selected for astronaut training program",
                 "Completed intensive space mission preparation",
@@ -347,6 +333,48 @@ def generate_career_timeline():
                 "Advanced to senior astronaut role",
                 "Retired from active space missions"
             ]
+        else:
+            try:
+                prompt = f"""
+                Create 5 career milestones for astronaut {astronaut_name} who had {mission_count} missions and {mission_duration} days in space.
+                Each milestone should be exactly 10 words or less.
+                Include: selection, training, first mission, advancement, and final achievement.
+                Return as a JSON array of strings.
+                """
+                
+                response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=[
+                        {"role": "system", "content": "You are a space career analyst. Return only valid JSON arrays."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    max_tokens=200,
+                    temperature=0.7
+                )
+                
+                timeline_text = response.choices[0].message.content.strip()
+                # Try to parse as JSON, fallback if it fails
+                try:
+                    timeline = json.loads(timeline_text)
+                except:
+                    timeline = [
+                        "Selected for astronaut training program",
+                        "Completed intensive space mission preparation", 
+                        "First space mission launch",
+                        "Advanced to senior astronaut role",
+                        "Retired from active space missions"
+                    ]
+                
+            except Exception as e:
+                log.error(f"Error generating timeline with OpenAI: {e}")
+                # Fallback timeline
+                timeline = [
+                    "Selected for astronaut training program",
+                    "Completed intensive space mission preparation",
+                    "First space mission launch", 
+                    "Advanced to senior astronaut role",
+                    "Retired from active space missions"
+                ]
         
         return jsonify({"timeline": timeline})
         

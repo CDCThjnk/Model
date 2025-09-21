@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { ChevronLeft, ChevronRight, Rocket, GraduationCap, Globe, Users, Calendar, Heart, Camera } from 'lucide-react'
@@ -36,10 +36,17 @@ const nationalityOptions = [
   'Other'
 ]
 
-// Animated stars background with memoized positions and smooth transitions
+// Animated stars background with client-side generation to avoid SSR hydration mismatch
 const StarsBackground = ({ currentStep }: { currentStep: number }) => {
-  // Memoize star positions so they don't change on every render
-  const starPositions = useMemo(() => {
+  // Client-only star generation to avoid SSR hydration mismatch
+  const [starPositions, setStarPositions] = useState<{
+    largeStars: Array<{id: string, left: number, top: number, duration: number, delay: number}>,
+    mediumStars: Array<{id: string, left: number, top: number, duration: number, delay: number}>,
+    smallStars: Array<{id: string, left: number, top: number, duration: number, delay: number}>
+  } | null>(null)
+
+  useEffect(() => {
+    // Generate star positions client-side only to avoid SSR mismatch
     const largeStars = Array.from({ length: 20 }, (_, i) => ({
       id: `large-${i}`,
       left: Math.random() * 100,
@@ -64,8 +71,13 @@ const StarsBackground = ({ currentStep }: { currentStep: number }) => {
       delay: Math.random() * 10,
     }))
     
-    return { largeStars, mediumStars, smallStars }
-  }, []) // Empty dependency array - positions only calculated once
+    setStarPositions({ largeStars, mediumStars, smallStars })
+  }, [])
+
+  // Don't render anything until client-side positions are generated
+  if (!starPositions) {
+    return <div className="fixed inset-0 overflow-hidden pointer-events-none bg-black" />
+  }
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none bg-black">

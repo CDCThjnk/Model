@@ -102,7 +102,7 @@ export default function Results() {
         setUserProfile(parsedProfile)
         
         // Start analysis process
-        startAnalysisProcess(topAstronauts.slice(0, 2))
+        startAnalysisProcess(topAstronauts)
         
       } catch (error) {
         console.error('Error parsing stored data:', error)
@@ -167,9 +167,15 @@ export default function Results() {
     }, 6000) // Exactly 6 seconds
     
     // Generate biographies and timelines in background (completely async)
-    setTimeout(() => {
+    setTimeout(async () => {
       generateAstronautBiographies(astronauts)
-      generateCareerTimelines(astronauts)
+      await generateCareerTimelines(astronauts)
+      
+      // Force state update to trigger timeline re-render
+      setMatches(prev => prev ? {
+        ...prev,
+        top_astronauts: [...prev.top_astronauts]
+      } : prev)
       
       // Face swap will be handled by useEffect when userProfile is ready
     }, 100) // Start background processing after 100ms
@@ -213,8 +219,10 @@ export default function Results() {
 
   // Generate career timeline points for astronauts
   const generateCareerTimelines = async (astronauts: AstronautMatch[]) => {
+    console.log('=== GENERATING CAREER TIMELINES ===')
     for (let i = 0; i < astronauts.length; i++) {
       const astronaut = astronauts[i]
+      console.log(`Processing astronaut ${i + 1}:`, astronaut['Profile.Name'])
       try {
         const response = await fetch('/api/generate_career_timeline', {
           method: 'POST',
@@ -229,6 +237,7 @@ export default function Results() {
         
         if (response.ok) {
           const data = await response.json()
+          console.log(`Timeline data for ${astronaut['Profile.Name']}:`, data)
           // Normalize to exactly 4 points
           const baseTimeline = Array.isArray(data.timeline) ? data.timeline.filter(Boolean) : []
           const normalizedTimeline = baseTimeline.slice(0, 4)
@@ -242,7 +251,9 @@ export default function Results() {
             normalizedTimeline.push(fallbacks[normalizedTimeline.length])
           }
           astronaut.careerTimeline = normalizedTimeline
+          console.log(`Final timeline for ${astronaut['Profile.Name']}:`, astronaut.careerTimeline)
         } else {
+          console.log(`API failed for ${astronaut['Profile.Name']}, using fallback`)
           // Fallback timeline - exactly 4 points
           astronaut.careerTimeline = [
             'Selected for astronaut training program',
@@ -252,7 +263,7 @@ export default function Results() {
           ]
         }
     } catch (error) {
-        console.error('Error generating timeline:', error)
+        console.error(`Error generating timeline for ${astronaut['Profile.Name']}:`, error)
         astronaut.careerTimeline = [
           'Astronaut training',
           'First mission',
@@ -261,6 +272,7 @@ export default function Results() {
         ]
       }
     }
+    console.log('=== CAREER TIMELINES COMPLETE ===')
   }
 
   // Generate user's current career development steps
@@ -637,39 +649,38 @@ export default function Results() {
         {/* Astronaut Timeline (Top) */}
         <div className="mb-12">
           <h3 className="text-xl font-bold text-white mb-6">{astronautName}'s Journey</h3>
-          <div className="relative min-h-64 bg-white/10 rounded-lg p-6 flex items-center">
-            {/* Connecting line for astronaut timeline - positioned to align with stars */}
-            <div className="absolute top-16 left-8 right-8 h-0.5 bg-accent-gold/30"></div>
-            
-            {astronautTimeline.map((point, index) => (
-              <div key={index} className="flex-1 text-center px-2 relative z-10">
-                <motion.div
-                  className="w-6 h-6 bg-accent-gold rounded-full mx-auto flex items-center justify-center border-2 border-accent-gold absolute"
-                  style={{ 
-                    top: 'calc(4rem - 12px)', 
-                    left: '50%', 
-                    transform: 'translateX(-50%)',
-                    zIndex: 20
-                  }}
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: index * 0.2 }}
-                >
-                  {index === astronautTimeline.length - 1 ? (
-                    <Moon className="w-4 h-4 text-space-dark" />
-                  ) : (
-                    <Star className="w-4 h-4 text-space-dark" />
-                  )}
-                </motion.div>
-                {/* Text box positioned absolutely to start at line height */}
-                <div 
-                  className="bg-white/5 rounded-lg p-3 border border-white/10 absolute left-2 right-2"
-                  style={{ top: 'calc(4rem + 0.75rem)' }}
-                >
-                  <p className="text-sm text-white font-medium leading-tight">{point}</p>
-                </div>
+          <div className="relative bg-white/10 rounded-lg p-6 min-h-48">
+            {/* Main timeline container */}
+            <div className="relative pt-8 pb-4">
+              {/* Timeline line - horizontal across the container */}
+              <div className="absolute top-12 left-8 right-8 h-0.5 bg-accent-gold z-10"></div>
+              
+              {/* Timeline points */}
+              <div className="flex justify-between items-start px-8">
+                {astronautTimeline.map((point, index) => (
+                  <div key={index} className="flex-1 flex flex-col items-center">
+                    {/* Star positioned on the timeline line */}
+                    <motion.div
+                      className="w-6 h-6 bg-accent-gold rounded-full flex items-center justify-center border-2 border-accent-gold z-20 relative"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: index * 0.2 }}
+                    >
+                      {index === astronautTimeline.length - 1 ? (
+                        <Moon className="w-4 h-4 text-space-dark" />
+                      ) : (
+                        <Star className="w-4 h-4 text-space-dark" />
+                      )}
+                    </motion.div>
+                    
+                    {/* Text box positioned below the star */}
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/10 mt-4 max-w-36 text-center">
+                      <p className="text-xs text-white font-medium leading-tight">{point}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
             <motion.div
               className="absolute top-2 right-2"
               initial={{ x: -20 }}
@@ -684,39 +695,38 @@ export default function Results() {
         {/* User Timeline (Bottom) */}
         <div className="mt-8">
           <h3 className="text-xl font-bold text-white mb-6">Your Journey</h3>
-          <div className="relative min-h-64 bg-white/10 rounded-lg p-6 flex items-center">
-            {/* Connecting line for user timeline - positioned to align with stars */}
-            <div className="absolute top-16 left-8 right-8 h-0.5 bg-space-blue/30"></div>
-            
-            {userTimeline.map((point, index) => (
-              <div key={index} className="flex-1 text-center px-2 relative z-10">
-                <motion.div
-                  className="w-6 h-6 bg-space-blue rounded-full mx-auto flex items-center justify-center border-2 border-space-blue absolute"
-                  style={{ 
-                    top: 'calc(4rem - 12px)', 
-                    left: '50%', 
-                    transform: 'translateX(-50%)',
-                    zIndex: 20
-                  }}
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: index * 0.2 }}
-                >
-                  {index === userTimeline.length - 1 ? (
-                    <Moon className="w-4 h-4 text-white" />
-                  ) : (
-                    <Star className="w-4 h-4 text-white" />
-                  )}
-                </motion.div>
-                {/* Text box positioned absolutely to start at line height */}
-                <div 
-                  className="bg-white/5 rounded-lg p-3 border border-white/10 absolute left-2 right-2"
-                  style={{ top: 'calc(4rem + 0.75rem)' }}
-                >
-                  <p className="text-sm text-white font-medium leading-tight">{point}</p>
-                </div>
+          <div className="relative bg-white/10 rounded-lg p-6 min-h-48">
+            {/* Main timeline container */}
+            <div className="relative pt-8 pb-4">
+              {/* Timeline line - horizontal across the container */}
+              <div className="absolute top-12 left-8 right-8 h-0.5 bg-space-blue z-10"></div>
+              
+              {/* Timeline points */}
+              <div className="flex justify-between items-start px-8">
+                {userTimeline.map((point, index) => (
+                  <div key={index} className="flex-1 flex flex-col items-center">
+                    {/* Star positioned on the timeline line */}
+                    <motion.div
+                      className="w-6 h-6 bg-space-blue rounded-full flex items-center justify-center border-2 border-space-blue z-20 relative"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: index * 0.2 }}
+                    >
+                      {index === userTimeline.length - 1 ? (
+                        <Moon className="w-4 h-4 text-white" />
+                      ) : (
+                        <Star className="w-4 h-4 text-white" />
+                      )}
+                    </motion.div>
+                    
+                    {/* Text box positioned below the star */}
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/10 mt-4 max-w-36 text-center">
+                      <p className="text-xs text-white font-medium leading-tight">{point}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
             <motion.div
               className="absolute top-2 left-2"
               animate={{ x: rocketProgress * 2.5 }}
@@ -752,7 +762,7 @@ export default function Results() {
         </motion.h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {matches?.top_astronauts.slice(0, 2).map((astronaut, index) => (
+          {matches?.top_astronauts.slice(0, 3).map((astronaut, index) => (
             <motion.div
               key={index}
               className="card p-8"
