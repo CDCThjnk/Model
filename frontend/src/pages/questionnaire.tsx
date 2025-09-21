@@ -137,9 +137,9 @@ export default function Questionnaire() {
     console.log('Current step:', currentStep, 'Total steps:', totalSteps)
     console.log('Raw form data:', data)
     
-    // Only allow submission on the final step (selfie step)
-    if (currentStep < totalSteps) {
-      console.log('Not on final step, current step:', currentStep, 'total steps:', totalSteps)
+    // Allow submission only when explicitly ready (step 7 with photo taken or skipped to step 8)
+    if (currentStep <= totalSteps) {
+      console.log('Not ready for submission, current step:', currentStep, 'total steps:', totalSteps)
       return
     }
     
@@ -464,22 +464,28 @@ export default function Questionnaire() {
                   // Properly update form value using setValue
                   setValue('selfie', imageData)
                   console.log('Selfie data stored in form')
+                  // Auto-advance to submission step after photo is taken
+                  setTimeout(() => setCurrentStep(totalSteps + 1), 1000)
                 }}
                 register={register}
                 errors={errors}
               />
               
               {/* Skip button for optional selfie */}
-              <div className="text-center mt-4">
+              <div className="text-center mt-8">
+                <p className="text-white/80 mb-4 text-sm">
+                  Take a selfie to see yourself in an astronaut suit, or skip to continue
+                </p>
                 <button
                   type="button"
                   onClick={() => {
-                    // Skip selfie and proceed to next step
-                    setCurrentStep(currentStep + 1)
+                    console.log('User clicked skip selfie button')
+                    // Skip selfie and allow submission - move to final step
+                    setCurrentStep(totalSteps + 1)
                   }}
-                  className="text-white/60 hover:text-white transition-colors underline"
+                  className="text-white/60 hover:text-white transition-colors underline text-sm"
                 >
-                  Skip for now
+                  Skip selfie and find matches
                 </button>
               </div>
             </div>
@@ -547,7 +553,7 @@ export default function Questionnaire() {
                   <span>Previous</span>
                 </button>
                 
-                {currentStep < totalSteps ? (
+                {currentStep < totalSteps || (currentStep === totalSteps && !watch().selfie) ? (
                   <button
                     type="button"
                     onClick={nextStep}
