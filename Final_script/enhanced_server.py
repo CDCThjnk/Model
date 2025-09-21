@@ -33,6 +33,37 @@ SUFFIXES = {"jr", "jr.", "sr", "sr.", "ii", "iii", "iv", "v"}
 def _norm_token(s: str) -> str:
     return re.sub(r"[^\w\-']", "", s.casefold()).strip()
 
+def _normalize_name(name: str) -> str:
+    """Normalize name to 'Firstname Lastname' format for consistent matching"""
+    if not name or not name.strip():
+        return ""
+    
+    # Remove suffixes and clean up
+    parts = []
+    for part in name.strip().split():
+        clean_part = _norm_token(part)
+        if clean_part and clean_part not in SUFFIXES:
+            parts.append(clean_part.title())
+    
+    if not parts:
+        return ""
+        
+    # Handle comma-separated format "Last, First Middle"
+    if ',' in name:
+        left, right = name.split(',', 1)
+        last_parts = [_norm_token(p).title() for p in left.strip().split() if _norm_token(p) not in SUFFIXES]
+        first_parts = [_norm_token(p).title() for p in right.strip().split() if _norm_token(p) not in SUFFIXES]
+        if last_parts and first_parts:
+            return f"{first_parts[0]} {last_parts[0]}"
+    
+    # Regular format - assume first word is first name, last word is last name
+    if len(parts) >= 2:
+        return f"{parts[0]} {parts[-1]}"
+    elif len(parts) == 1:
+        return parts[0]
+    
+    return ""
+
 def _split_candidate_name(full: str):
     parts = full.strip().split()
     if not parts:
@@ -53,7 +84,8 @@ def _split_csv_name(csv_name: str):
         first = right_tokens[0] if right_tokens else ""
     return first, last
 
-def get_profiles_from_names(names: List[str], csv_path: str = CSV_PATH) -> List[Dict[str, Any]]:
+def get_profiles_from_names(names: List[str], csv_path: str = CSV_PATH) -> Dict[str, Dict[str, Any]]:
+    """Get profiles from CSV with robust name matching. Returns dict mapping normalized name -> profile"""
     try:
         df = pd.read_csv(csv_path)
     except FileNotFoundError:
@@ -62,43 +94,59 @@ def get_profiles_from_names(names: List[str], csv_path: str = CSV_PATH) -> List[
     if 'Profile.Name' not in df.columns:
         raise KeyError("CSV must contain a 'Profile.Name' column")
 
-    if '___norm_first' not in df.columns or '___norm_last' not in df.columns:
-        norm_first, norm_last = [], []
-        for raw in df['Profile.Name'].fillna(""):
-            f, l = _split_csv_name(str(raw))
-            norm_first.append(f)
-            norm_last.append(l)
-        df['___norm_first'] = norm_first
-        df['___norm_last']  = norm_last
+    # Create normalized name column for matching
+    if '___normalized_name' not in df.columns:
+        df['___normalized_name'] = df['Profile.Name'].fillna("").apply(_normalize_name)
 
-    wanted = []
+    found_profiles = {}
+    
     for name in names:
         if not isinstance(name, str) or not name.strip():
             continue
-        cf, cl = _split_candidate_name(name)
-        if cf is None:
+            
+        normalized_search = _normalize_name(name)
+        if not normalized_search:
             continue
-
-        mask = True
-        if cl:
-            mask = mask & (df['___norm_last'] == cl)
-        mask = mask & (df['___norm_first'].str.startswith(cf))
-
-        matches = df[mask]
-
-        if matches.empty and cl:
-            mask2 = (df['___norm_last'].str.startswith(cl)) & (df['___norm_first'].str.startswith(cf))
-            matches = df[mask2]
-
-        if not matches.empty:
-            wanted.append(matches)
-
-    if not wanted:
-        return []
-
-    out = pd.concat(wanted, ignore_index=True)
-    out = out.drop_duplicates(subset=['Profile.Name'])
-    return out.to_dict(orient='records')
+            
+        log.info(f"Looking for '{name}' -> normalized: '{normalized_search}'")
+        
+        # Try exact match first
+        exact_matches = df[df['___normalized_name'] == normalized_search]
+        if not exact_matches.empty:
+            profile = exact_matches.iloc[0].to_dict()
+            found_profiles[normalized_search] = profile
+            log.info(f"✅ Found exact match: {profile['Profile.Name']}")
+            continue
+            
+        # Try fuzzy matching
+        best_match = None
+        best_score = 0
+        
+        for idx, csv_name in df['___normalized_name'].items():
+            if not csv_name:
+                continue
+                
+            # Simple similarity score based on common words
+            search_words = set(normalized_search.lower().split())
+            csv_words = set(csv_name.lower().split())
+            
+            if search_words and csv_words:
+                intersection = len(search_words & csv_words)
+                union = len(search_words | csv_words)
+                score = intersection / union if union > 0 else 0
+                
+                if score > best_score and score >= 0.5:  # At least 50% similarity
+                    best_score = score
+                    best_match = idx
+        
+        if best_match is not None:
+            profile = df.iloc[best_match].to_dict()
+            found_profiles[normalized_search] = profile
+            log.info(f"✅ Found fuzzy match: {name} -> {profile['Profile.Name']} (score: {best_score:.2f})")
+        else:
+            log.warning(f"❌ No match found for: {name}")
+    
+    return found_profiles
 
 def extract_names(items: List[Dict[str, Any]]) -> List[str]:
     names = []
@@ -184,7 +232,7 @@ def similar_astronauts():
     print('=== BACKEND API CALL RECEIVED ===')
     print(f'Request method: {request.method}')
     print(f'Request path: {request.path}')
-    print(f'Request headers: {dict(request.headers)}')
+    print(f'Content-Type: {request.content_type}')
     try:
         data = request.get_json(silent=True) or {}
         print(f'Request data: {data}')
@@ -228,15 +276,69 @@ def similar_astronauts():
         if not isinstance(top_astronauts, list):
             return jsonify({"error": "top_astronauts must be a list in the model result"}), 500
 
-        # Skip the CSV lookup step since top_astronauts already contains full data
-        # The algorithm returns complete astronaut data, no need to look up in CSV again
-        log.info(f"Skipping CSV lookup - using astronauts directly from algorithm")
-        for i, astronaut in enumerate(top_astronauts):
-            astronaut_name = astronaut.get('Profile.Name', astronaut.get('name', 'Unknown'))
-            similarity_score = astronaut.get('similarity', 0.0)
-            log.info(f"Astronaut {i}: {astronaut_name} - Similarity: {similarity_score}")
+        # Extract names from algorithm results and get full profiles from CSV
+        top_names = extract_names(top_astronauts)
+        if not top_names:
+            log.error("No names could be extracted from top_astronauts")
+            result['top_astronauts'] = []
+            return jsonify(result)
         
-        result['top_astronauts'] = top_astronauts
+        log.info(f"Extracted names from algorithm: {top_names}")
+        
+        try:
+            # Get profiles mapped by normalized name
+            profiles_map = get_profiles_from_names(top_names, csv_path=CSV_PATH)
+            log.info(f"CSV lookup returned {len(profiles_map)} profile matches")
+        except Exception as e:
+            log.error(f"CSV lookup failed: {e}. Using algorithm data as fallback")
+            profiles_map = {}
+
+        # Merge algorithm results with CSV profiles by name matching
+        final_profiles = []
+        for algorithm_astronaut in top_astronauts:
+            # Extract name exactly like extract_names() does
+            algorithm_name = algorithm_astronaut.get('Profile.Name') or algorithm_astronaut.get('Name') or algorithm_astronaut.get('name', '')
+            normalized_name = _normalize_name(algorithm_name)
+            similarity_score = algorithm_astronaut.get('similarity', 0.0)
+            
+            if normalized_name and normalized_name in profiles_map:
+                # Use CSV profile with algorithm similarity score
+                profile = profiles_map[normalized_name].copy()
+                profile['similarity'] = similarity_score
+                final_profiles.append(profile)
+                log.info(f"✅ Merged: {algorithm_name} -> {profile.get('Profile.Name', 'Unknown')} (similarity: {similarity_score:.4f})")
+            else:
+                # Use algorithm result directly (will show as data unavailable for missions)
+                algorithm_astronaut['data_unavailable'] = True
+                final_profiles.append(algorithm_astronaut)
+                log.warning(f"⚠️  Using algorithm data only for: {algorithm_name} (similarity: {similarity_score:.4f})")
+        
+        # Enforce exactly top_k results - pad with additional CSV entries if needed
+        if len(final_profiles) < top_k:
+            log.warning(f"Only found {len(final_profiles)} profiles, need {top_k}. Attempting to backfill...")
+            
+            # Try to get additional high-similarity astronauts to meet top_k requirement
+            try:
+                backfill_result = find_similar_astronauts(user_profile, top_k=top_k + 5)  # Get more candidates
+                backfill_astronauts = backfill_result.get('top_astronauts', [])
+                
+                for backfill_astronaut in backfill_astronauts[len(final_profiles):]:
+                    if len(final_profiles) >= top_k:
+                        break
+                    
+                    backfill_name = backfill_astronaut.get('Profile.Name') or backfill_astronaut.get('Name') or backfill_astronaut.get('name', '')
+                    normalized_backfill = _normalize_name(backfill_name)
+                    
+                    if normalized_backfill and normalized_backfill in profiles_map:
+                        profile = profiles_map[normalized_backfill].copy()
+                        profile['similarity'] = backfill_astronaut.get('similarity', 0.0)
+                        final_profiles.append(profile)
+                        log.info(f"✅ Backfilled: {backfill_name} (similarity: {profile['similarity']:.4f})")
+                    
+            except Exception as e:
+                log.error(f"Backfill attempt failed: {e}")
+        
+        result['top_astronauts'] = final_profiles[:top_k]
 
         # Extract names for logging
         astronaut_names = [astronaut.get('Profile.Name', astronaut.get('name', 'Unknown')) for astronaut in top_astronauts]

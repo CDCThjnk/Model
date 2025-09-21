@@ -72,10 +72,15 @@ This is a full-stack web application that matches users with astronauts based on
 
 ## Recent Changes (September 2025)
 - Successfully imported and configured for Replit environment
-- Fixed hydration errors in React components
+- Fixed hydration errors in React components  
 - Configured proper port bindings and CORS settings
 - Set up deployment configuration for production
-- Both frontend and backend confirmed working correctly
+- **MAJOR FIX**: Resolved critical astronaut matching issues:
+  - Fixed backend bug where only 1 astronaut was displayed instead of 2
+  - Implemented robust name matching to show correct mission counts and days in space
+  - Added fuzzy name matching for CSV data lookup
+  - Enhanced security by removing sensitive header logging
+- Both frontend and backend confirmed working correctly with 2 astronaut matches
 
 ## User Preferences
 - Application successfully running on Replit
