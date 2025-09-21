@@ -177,7 +177,7 @@ export default function Questionnaire() {
         },
         body: JSON.stringify({
           user_profile: userProfile,
-          top_k: 3
+          top_k: 2
         }),
       })
       

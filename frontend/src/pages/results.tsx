@@ -85,19 +85,16 @@ export default function Results() {
         console.log('Parsed matches:', parsedMatches)
         console.log('Parsed profile:', parsedProfile)
         
-        // Ensure we have exactly 3 matches (pad with duplicates if needed)
+        // Use exact astronauts returned (no padding to avoid duplicates)
         const topAstronauts = parsedMatches.top_astronauts || []
         console.log('Loaded astronauts from sessionStorage:', topAstronauts)
         console.log('First astronaut name:', topAstronauts[0]?.name)
         console.log('First astronaut keys:', topAstronauts[0] ? Object.keys(topAstronauts[0]) : 'No astronauts')
         console.log('First astronaut full object:', topAstronauts[0])
-        while (topAstronauts.length < 3) {
-          topAstronauts.push(topAstronauts[0] || {})
-        }
         
         setMatches({
           ...parsedMatches,
-          top_astronauts: topAstronauts.slice(0, 3)
+          top_astronauts: topAstronauts
         })
         setUserProfile(parsedProfile)
         
@@ -157,14 +154,14 @@ export default function Results() {
       setAstronautCount(currentCount)
     }, 60) // 60ms interval for smoother animation
     
-    // Show results after exactly 6 seconds regardless of API calls
+    // Show results after exactly 8 seconds for longer display
     setTimeout(() => {
       console.log('Analysis complete, moving to results')
       clearInterval(counterInterval) // Stop counter
       setAstronautCount(570) // Ensure it shows 570
       setIsAnalyzing(false)
       setCurrentSlide(0) // Move to first results slide
-    }, 6000) // Exactly 6 seconds
+    }, 8000) // Exactly 8 seconds for longer display
     
     // Generate biographies and timelines in background (completely async)
     setTimeout(async () => {
@@ -497,7 +494,7 @@ export default function Results() {
               animate={{ opacity: 1, scale: 1 }}
               className="text-2xl font-bold text-accent-gold"
             >
-              We found your {matches?.top_astronauts.length || 3} closest matches!
+              Found 2 matches!
             </motion.p>
           )}
         </motion.div>
