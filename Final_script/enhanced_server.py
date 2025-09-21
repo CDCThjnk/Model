@@ -228,24 +228,19 @@ def similar_astronauts():
         if not isinstance(top_astronauts, list):
             return jsonify({"error": "top_astronauts must be a list in the model result"}), 500
 
-        top_names = extract_names(top_astronauts)
-        if not top_names:
-            result['top_astronauts'] = []
-            return jsonify(result)
-
-        full_profiles = get_profiles_from_names(top_names, csv_path=CSV_PATH)
+        # Skip the CSV lookup step since top_astronauts already contains full data
+        # The algorithm returns complete astronaut data, no need to look up in CSV again
+        log.info(f"Skipping CSV lookup - using astronauts directly from algorithm")
+        for i, astronaut in enumerate(top_astronauts):
+            astronaut_name = astronaut.get('Profile.Name', astronaut.get('name', 'Unknown'))
+            similarity_score = astronaut.get('similarity', 0.0)
+            log.info(f"Astronaut {i}: {astronaut_name} - Similarity: {similarity_score}")
         
-        # Merge similarity scores from original results with full profiles
-        for i, full_profile in enumerate(full_profiles):
-            if i < len(top_astronauts):
-                # Preserve the similarity score from the original calculation
-                similarity_score = top_astronauts[i].get('similarity', 0.0)
-                full_profile['similarity'] = similarity_score
-                log.info(f"Astronaut {i}: {full_profile.get('Profile.Name', 'Unknown')} - Similarity: {similarity_score}")
-        
-        result['top_astronauts'] = full_profiles
+        result['top_astronauts'] = top_astronauts
 
-        log.info("Top Names: %s", top_names)
+        # Extract names for logging
+        astronaut_names = [astronaut.get('Profile.Name', astronaut.get('name', 'Unknown')) for astronaut in top_astronauts]
+        log.info("Top Names: %s", astronaut_names)
         log.info("Result keys: %s", list(result.keys()))
         return jsonify(result)
 
