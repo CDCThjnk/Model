@@ -77,8 +77,8 @@ def embed_person(model: Word2Vec, rec: Dict, cat_weights=None) -> np.ndarray:
 	return np.concatenate([v_edu, v_occ, v_int, v_nat], axis=0)
 
 def find_similar_astronauts(user_profile: Dict[str, Any],
-							model_path: str = r"/Users/harjyot/Desktop/code/Model/word2vec_people_categories.model",
-							df_path: str = r"/Users/harjyot/Desktop/code/Model/Data Analysis/astronauts_with_roles.pkl",
+							model_path: str = r"/Users/joephelps/CDC2025/Model/word2vec_people_categories.model",
+							df_path: str = r"/Users/joephelps/CDC2025/Model/Data Analysis/astronauts_with_roles.pkl",
 							top_k: int = 3) -> Dict[str, Any]:
 	"""
 	Given a user profile dict, return top_k most similar astronauts and role similarity scores.
@@ -102,13 +102,48 @@ def find_similar_astronauts(user_profile: Dict[str, Any],
 	# Astronaut similarity
 	astro_mat = np.vstack(df["embedding_concat"].values)
 	sims = cosine_similarity(user_emb.reshape(1, -1), astro_mat).ravel()
-	rank_idx = np.argsort(-sims)[:top_k]
+	
+	# Get unique astronauts by name to avoid duplicates
+	seen_names = set()
 	top_astronauts = []
-	for idx in rank_idx:
+	
+	# Sort by similarity score (descending) and get unique astronauts
+	sorted_indices = np.argsort(-sims)
+	
+	for idx in sorted_indices:
+		if len(top_astronauts) >= top_k:
+			break
+			
 		astro = df.iloc[idx].to_dict()
+		astro_name = astro.get('name', '')
+		
+		# Skip if we've already seen this astronaut or if name is empty
+		if astro_name in seen_names or not astro_name.strip():
+			continue
+			
+		seen_names.add(astro_name)
 		astro["similarity"] = float(sims[idx])
 		astro = {k: v for k, v in astro.items() if k != "embedding_concat"}
 		top_astronauts.append(astro)
+	
+	# If we don't have enough unique astronauts, fill with remaining unique ones
+	if len(top_astronauts) < top_k:
+		for idx in sorted_indices:
+			if len(top_astronauts) >= top_k:
+				break
+				
+			astro = df.iloc[idx].to_dict()
+			astro_name = astro.get('name', '')
+			
+			# Skip if we've already seen this astronaut or if name is empty
+			if astro_name in seen_names or not astro_name.strip():
+				continue
+				
+			seen_names.add(astro_name)
+			astro["similarity"] = float(sims[idx])
+			astro = {k: v for k, v in astro.items() if k != "embedding_concat"}
+			top_astronauts.append(astro)
+	
 	return {"top_astronauts": top_astronauts, "role_scores": role_corr}
 
 # print(find_similar_astronauts(

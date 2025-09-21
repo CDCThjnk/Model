@@ -11,9 +11,6 @@ import os
 import re
 import json
 from werkzeug.utils import secure_filename
-import PyPDF2
-import docx
-from io import BytesIO
 import openai
 from datetime import datetime
 
@@ -23,18 +20,11 @@ logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
 # Configuration
-CSV_PATH = '/Users/harjyot/Desktop/code/Model/Data Analysis/astronauts.csv'
-UPLOAD_FOLDER = '/Users/harjyot/Desktop/code/Model/uploads'
-ALLOWED_EXTENSIONS = {'pdf', 'doc', 'docx', 'txt'}
-
-# Ensure upload directory exists
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+CSV_PATH = '/Users/joephelps/CDC2025/Model/Data Analysis/astronauts.csv'
 
 # OpenAI configuration (you'll need to set your API key)
 openai.api_key = os.getenv('OPENAI_API_KEY', 'your-openai-api-key-here')
 
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 5MB max file size
 
 # Name matching functions (existing code)
 SUFFIXES = {"jr", "jr.", "sr", "sr.", "ii", "iii", "iv", "v"}
@@ -117,169 +107,6 @@ def extract_names(items: List[Dict[str, Any]]) -> List[str]:
             names.append(n.strip())
     return names
 
-# Resume parsing functions
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-def extract_text_from_pdf(file_content):
-    try:
-        pdf_reader = PyPDF2.PdfReader(BytesIO(file_content))
-        text = ""
-        for page in pdf_reader.pages:
-            text += page.extract_text()
-        return text
-    except Exception as e:
-        log.error(f"Error extracting text from PDF: {e}")
-        return ""
-
-def extract_text_from_docx(file_content):
-    try:
-        doc = docx.Document(BytesIO(file_content))
-        text = ""
-        for paragraph in doc.paragraphs:
-            text += paragraph.text + "\n"
-        return text
-    except Exception as e:
-        log.error(f"Error extracting text from DOCX: {e}")
-        return ""
-
-def extract_text_from_txt(file_content):
-    try:
-        return file_content.decode('utf-8')
-    except Exception as e:
-        log.error(f"Error extracting text from TXT: {e}")
-        return ""
-
-def parse_resume_text(text):
-    """Extract structured information from resume text using regex patterns"""
-    
-    # Initialize result structure
-    result = {
-        'name': '',
-        'email': '',
-        'phone': '',
-        'education': [],
-        'occupations': [],
-        'skills': [],
-        'interests': [],
-        'nationality': '',
-        'age': None
-    }
-    
-    # Extract name (usually at the top)
-    name_patterns = [
-        r'^([A-Z][a-z]+ [A-Z][a-z]+(?:\s[A-Z][a-z]+)*)',
-        r'Name:\s*([A-Z][a-z]+ [A-Z][a-z]+(?:\s[A-Z][a-z]+)*)',
-        r'^([A-Z][a-z]+ [A-Z][a-z]+)'
-    ]
-    
-    for pattern in name_patterns:
-        match = re.search(pattern, text, re.MULTILINE)
-        if match:
-            result['name'] = match.group(1).strip()
-            break
-    
-    # Extract email
-    email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
-    email_match = re.search(email_pattern, text)
-    if email_match:
-        result['email'] = email_match.group(0)
-    
-    # Extract phone
-    phone_patterns = [
-        r'\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}',
-        r'\+\d{1,3}[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}'
-    ]
-    
-    for pattern in phone_patterns:
-        phone_match = re.search(pattern, text)
-        if phone_match:
-            result['phone'] = phone_match.group(0)
-            break
-    
-    # Extract education
-    education_keywords = ['university', 'college', 'institute', 'school', 'degree', 'bachelor', 'master', 'phd', 'doctorate']
-    education_pattern = r'(?i)(?:education|academic|qualification).*?(?=\n\n|\n[A-Z]|$)'
-    education_match = re.search(education_pattern, text, re.DOTALL)
-    
-    if education_match:
-        education_text = education_match.group(0)
-        lines = education_text.split('\n')
-        for line in lines:
-            line = line.strip()
-            if any(keyword in line.lower() for keyword in education_keywords):
-                # Extract institution and degree
-                institution_match = re.search(r'([A-Z][a-zA-Z\s&]+(?:University|College|Institute|School))', line)
-                degree_match = re.search(r'(Bachelor|Master|PhD|Doctorate|Associate|Certificate)', line, re.IGNORECASE)
-                
-                if institution_match or degree_match:
-                    result['education'].append({
-                        'institution': institution_match.group(1) if institution_match else 'Unknown Institution',
-                        'qualification': degree_match.group(1) if degree_match else 'Degree'
-                    })
-    
-    # Extract work experience/occupations
-    experience_keywords = ['experience', 'employment', 'work', 'career', 'professional']
-    experience_pattern = r'(?i)(?:experience|employment|work|career|professional).*?(?=\n\n|\n[A-Z]|$)'
-    experience_match = re.search(experience_pattern, text, re.DOTALL)
-    
-    if experience_match:
-        experience_text = experience_match.group(0)
-        lines = experience_text.split('\n')
-        for line in lines:
-            line = line.strip()
-            if line and not any(keyword in line.lower() for keyword in ['experience', 'employment', 'work']):
-                # Extract job titles
-                job_title_patterns = [
-                    r'(?:Senior|Junior|Lead|Principal|Staff)?\s*(Engineer|Developer|Manager|Analyst|Consultant|Specialist|Coordinator|Director|Officer)',
-                    r'([A-Z][a-z]+ [A-Z][a-z]+(?:\s[A-Z][a-z]+)*)'
-                ]
-                
-                for pattern in job_title_patterns:
-                    job_match = re.search(pattern, line)
-                    if job_match:
-                        result['occupations'].append(job_match.group(1).strip())
-                        break
-    
-    # Extract skills
-    skills_keywords = ['skills', 'technical', 'competencies', 'abilities']
-    skills_pattern = r'(?i)(?:skills|technical|competencies|abilities).*?(?=\n\n|\n[A-Z]|$)'
-    skills_match = re.search(skills_pattern, text, re.DOTALL)
-    
-    if skills_match:
-        skills_text = skills_match.group(0)
-        # Common technical skills
-        common_skills = [
-            'Python', 'Java', 'JavaScript', 'C++', 'C#', 'SQL', 'HTML', 'CSS',
-            'React', 'Angular', 'Vue', 'Node.js', 'Django', 'Flask', 'Spring',
-            'AWS', 'Azure', 'Docker', 'Kubernetes', 'Git', 'Linux', 'Windows',
-            'Machine Learning', 'Data Analysis', 'Project Management', 'Agile',
-            'Scrum', 'DevOps', 'Cybersecurity', 'Database Design', 'UI/UX'
-        ]
-        
-        for skill in common_skills:
-            if skill.lower() in skills_text.lower():
-                result['skills'].append(skill)
-    
-    # Extract interests/hobbies
-    interests_keywords = ['interests', 'hobbies', 'activities', 'passions']
-    interests_pattern = r'(?i)(?:interests|hobbies|activities|passions).*?(?=\n\n|\n[A-Z]|$)'
-    interests_match = re.search(interests_pattern, text, re.DOTALL)
-    
-    if interests_match:
-        interests_text = interests_match.group(0)
-        lines = interests_text.split('\n')
-        for line in lines:
-            line = line.strip()
-            if line and not any(keyword in line.lower() for keyword in interests_keywords):
-                result['interests'].append(line)
-    
-    # Clean up and deduplicate
-    result['occupations'] = list(set(result['occupations']))[:10]  # Limit to 10
-    result['skills'] = list(set(result['skills']))[:15]  # Limit to 15
-    result['interests'] = list(set(result['interests']))[:10]  # Limit to 10
-    
-    return result
 
 def generate_career_advice(user_profile, astronaut_match, similarity_score):
     """Generate AI-powered career advice using OpenAI"""
@@ -394,48 +221,6 @@ def similar_astronauts():
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
-@app.route('/parse_resume', methods=['POST'])
-def parse_resume():
-    try:
-        if 'resume' not in request.files:
-            return jsonify({"error": "No resume file provided"}), 400
-        
-        file = request.files['resume']
-        if file.filename == '':
-            return jsonify({"error": "No file selected"}), 400
-        
-        if not allowed_file(file.filename):
-            return jsonify({"error": "File type not allowed"}), 400
-        
-        # Read file content
-        file_content = file.read()
-        filename = secure_filename(file.filename)
-        file_extension = filename.rsplit('.', 1)[1].lower()
-        
-        # Extract text based on file type
-        text = ""
-        if file_extension == 'pdf':
-            text = extract_text_from_pdf(file_content)
-        elif file_extension == 'docx':
-            text = extract_text_from_docx(file_content)
-        elif file_extension == 'doc':
-            text = extract_text_from_docx(file_content)  # Try docx parser for .doc files
-        elif file_extension == 'txt':
-            text = extract_text_from_txt(file_content)
-        
-        if not text.strip():
-            return jsonify({"error": "Could not extract text from file"}), 400
-        
-        # Parse the extracted text
-        parsed_data = parse_resume_text(text)
-        
-        log.info("Successfully parsed resume for: %s", parsed_data.get('name', 'Unknown'))
-        return jsonify(parsed_data)
-        
-    except Exception as e:
-        log.error(f"Error parsing resume: {e}")
-        traceback.print_exc()
-        return jsonify({"error": str(e)}), 500
 
 @app.route('/generate_advice', methods=['POST'])
 def generate_advice():
@@ -457,9 +242,115 @@ def generate_advice():
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
+@app.route('/generate_biography', methods=['POST'])
+def generate_biography():
+    """
+    Generate a short biography for an astronaut using AI
+    """
+    try:
+        data = request.get_json(silent=True) or {}
+        astronaut_name = data.get('astronaut_name', 'Unknown')
+        nationality = data.get('nationality', 'Unknown')
+        mission_count = data.get('mission_count', 0)
+        mission_duration = data.get('mission_duration', 0)
+        role = data.get('role', 'Astronaut')
+        
+        try:
+            prompt = f"""
+            Write a brief, inspiring biography (2-3 sentences) for astronaut {astronaut_name} from {nationality}.
+            They have {mission_count} space missions and {mission_duration} days in space.
+            Their role was {role}.
+            Make it engaging and highlight their achievements.
+            """
+            
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a space historian writing inspiring astronaut biographies."},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=150,
+                temperature=0.7
+            )
+            
+            biography = response.choices[0].message.content.strip()
+            
+        except Exception as e:
+            log.error(f"Error generating biography with OpenAI: {e}")
+            # Fallback biography
+            biography = f"{astronaut_name} is a distinguished astronaut from {nationality} with {mission_count} space missions and {mission_duration} days in space. Their role as {role} demonstrates their expertise and dedication to space exploration."
+        
+        return jsonify({"biography": biography})
+        
+    except Exception as e:
+        log.error(f"Error generating biography: {e}")
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/generate_career_timeline', methods=['POST'])
+def generate_career_timeline():
+    """
+    Generate career timeline points for an astronaut using AI
+    """
+    try:
+        data = request.get_json(silent=True) or {}
+        astronaut_name = data.get('astronaut_name', 'Unknown')
+        mission_count = data.get('mission_count', 0)
+        mission_duration = data.get('mission_duration', 0)
+        role = data.get('role', 'Astronaut')
+        
+        try:
+            prompt = f"""
+            Create 5 career milestones for astronaut {astronaut_name} who had {mission_count} missions and {mission_duration} days in space.
+            Each milestone should be exactly 10 words or less.
+            Include: selection, training, first mission, advancement, and final achievement.
+            Return as a JSON array of strings.
+            """
+            
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a space career analyst. Return only valid JSON arrays."},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=200,
+                temperature=0.7
+            )
+            
+            timeline_text = response.choices[0].message.content.strip()
+            # Try to parse as JSON, fallback if it fails
+            try:
+                timeline = json.loads(timeline_text)
+            except:
+                timeline = [
+                    "Selected for astronaut training program",
+                    "Completed intensive space mission preparation", 
+                    "First space mission launch",
+                    "Advanced to senior astronaut role",
+                    "Retired from active space missions"
+                ]
+            
+        except Exception as e:
+            log.error(f"Error generating timeline with OpenAI: {e}")
+            # Fallback timeline
+            timeline = [
+                "Selected for astronaut training program",
+                "Completed intensive space mission preparation",
+                "First space mission launch", 
+                "Advanced to senior astronaut role",
+                "Retired from active space missions"
+            ]
+        
+        return jsonify({"timeline": timeline})
+        
+    except Exception as e:
+        log.error(f"Error generating career timeline: {e}")
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
 @app.route('/health', methods=['GET'])
 def health_check():
     return jsonify({"status": "healthy", "timestamp": datetime.now().isoformat()})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=4000, host='0.0.0.0')
+    app.run(debug=True, port=3001, host='0.0.0.0')

@@ -5,11 +5,10 @@ An innovative web application that matches users with astronauts based on their 
 ## ✨ Features
 
 ### Core Functionality
-- **Dual Input Methods**: Complete a detailed questionnaire or upload your resume
+- **Interactive Questionnaire**: Complete a conversational questionnaire to discover your astronaut matches
 - **AI-Powered Matching**: Uses Word2Vec embeddings to find similar astronauts
-- **Interactive Visualizations**: 3D network graphs showing connections
 - **Personalized Career Advice**: AI-generated recommendations based on matches
-- **Face-Swap Feature**: Try on a virtual space suit (coming soon)
+- **Detailed Results**: Explore astronaut profiles with similarity scores and career insights
 
 ### User Experience
 - **Modern UI**: Beautiful, responsive design with Tailwind CSS
@@ -25,12 +24,10 @@ An innovative web application that matches users with astronauts based on their 
 - **3D Graphics**: Three.js with React Three Fiber
 - **Forms**: React Hook Form for validation
 - **Animations**: Framer Motion
-- **File Upload**: React Dropzone
 
 ### Backend (Python/Flask)
 - **API**: Flask with CORS support
 - **ML Models**: Word2Vec for similarity matching
-- **Resume Parsing**: PyPDF2, python-docx for text extraction
 - **AI Integration**: OpenAI GPT for career advice
 - **Data Processing**: Pandas, NumPy, scikit-learn
 
@@ -103,7 +100,6 @@ Model/
 
 ### Core Matching
 - `POST /similar_astronauts` - Find similar astronauts
-- `POST /parse_resume` - Extract data from uploaded resume
 - `POST /generate_advice` - Generate AI career advice
 - `GET /health` - Health check
 
@@ -125,12 +121,6 @@ POST /similar_astronauts
 }
 ```
 
-**Parse Resume**
-```json
-POST /parse_resume
-Content-Type: multipart/form-data
-resume: <file>
-```
 
 ## 🎨 Customization
 
@@ -154,8 +144,7 @@ colors: {
 
 ### Adding New Features
 1. **New Questionnaire Questions**: Edit `questionnaire.tsx`
-2. **Additional Resume Fields**: Modify `parse_resume_text()` in `enhanced_server.py`
-3. **Custom Visualizations**: Add components in `src/components/`
+2. **Custom Visualizations**: Add components in `src/components/`
 
 ## 🤖 AI Features
 
@@ -168,14 +157,6 @@ def generate_career_advice(user_profile, astronaut_match, similarity_score):
     # Returns actionable recommendations for space career development
 ```
 
-### Resume Parsing
-Intelligent extraction of structured data from resumes:
-
-- **Personal Information**: Name, email, phone
-- **Education**: Institutions, degrees, qualifications  
-- **Experience**: Job titles, companies, roles
-- **Skills**: Technical and soft skills
-- **Interests**: Hobbies and personal interests
 
 ## 📊 Data Sources
 
