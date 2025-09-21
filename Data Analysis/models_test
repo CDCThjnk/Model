@@ -139,7 +139,7 @@ user_profile_non_astronaut = {
     "nationality": "United Kingdom"
 }
 
-user_emb = embed_person(astronaut_model, user_profile_aviator)
+user_emb = embed_person(astronaut_model, user_profile_non_astronaut)
 
 # ---------- Calculate similarity profile for each role ----------
 # Group astronauts by their roles
