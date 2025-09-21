@@ -229,15 +229,26 @@ export default function Results() {
         
         if (response.ok) {
           const data = await response.json()
-          astronaut.careerTimeline = data.timeline
+          // Normalize to exactly 4 points
+          const baseTimeline = Array.isArray(data.timeline) ? data.timeline.filter(Boolean) : []
+          const normalizedTimeline = baseTimeline.slice(0, 4)
+          const fallbacks = [
+            'Selected for astronaut training program',
+            'Completed intensive space mission preparation', 
+            'First space mission launch',
+            'Advanced to senior astronaut role'
+          ]
+          while (normalizedTimeline.length < 4) {
+            normalizedTimeline.push(fallbacks[normalizedTimeline.length])
+          }
+          astronaut.careerTimeline = normalizedTimeline
         } else {
-          // Fallback timeline
+          // Fallback timeline - exactly 4 points
           astronaut.careerTimeline = [
             'Selected for astronaut training program',
             'Completed intensive space mission preparation',
             'First space mission launch',
-            'Advanced to senior astronaut role',
-            'Retired from active space missions'
+            'Advanced to senior astronaut role'
           ]
         }
     } catch (error) {
@@ -246,8 +257,7 @@ export default function Results() {
           'Astronaut training',
           'First mission',
           'Advanced missions',
-          'Senior role',
-          'Retirement'
+          'Senior role'
         ]
       }
     }
@@ -279,7 +289,19 @@ export default function Results() {
     suggestions.push('Start regular physical fitness routine')
     suggestions.push('Learn about space industry careers')
     
-    return suggestions.slice(0, 4) // Return 4 suggestions
+    // Ensure exactly 4 suggestions
+    const finalSuggestions = suggestions.slice(0, 4)
+    while (finalSuggestions.length < 4) {
+      const fallbacks = [
+        'Build technical skills in STEM fields',
+        'Develop leadership and teamwork abilities',
+        'Gain experience in high-pressure environments',
+        'Pursue advanced education opportunities'
+      ]
+      finalSuggestions.push(fallbacks[finalSuggestions.length % fallbacks.length])
+    }
+    
+    return finalSuggestions // Always return exactly 4 suggestions
   }
 
   // Simple face swap processing (background)
@@ -624,7 +646,7 @@ export default function Results() {
                 <motion.div
                   className="w-6 h-6 bg-accent-gold rounded-full mx-auto flex items-center justify-center border-2 border-accent-gold absolute"
                   style={{ 
-                    top: 'calc(4rem + 1px)', 
+                    top: '4rem', 
                     left: '50%', 
                     transform: 'translateX(-50%) translateY(-50%)',
                     zIndex: 20
@@ -671,7 +693,7 @@ export default function Results() {
                 <motion.div
                   className="w-6 h-6 bg-space-blue rounded-full mx-auto flex items-center justify-center border-2 border-space-blue absolute"
                   style={{ 
-                    top: 'calc(4rem + 1px)', 
+                    top: '4rem', 
                     left: '50%', 
                     transform: 'translateX(-50%) translateY(-50%)',
                     zIndex: 20
