@@ -103,7 +103,7 @@ def embed_person(model: Word2Vec, rec: Dict, cat_weights=None) -> np.ndarray:
     return np.concatenate([v_edu, v_occ, v_int, v_nat], axis=0)
 
 # ------------------------- Model -------------------------
-astronaut_model = Word2Vec.load(r"C:\Users\ltkie\OneDrive\Documents\UNC\Fall25\CDC25\word2vec_people_categories.model")
+astronaut_model = Word2Vec.load(r"C:\Users\ltkie\OneDrive\Documents\UNC\Fall25\CDC25\Model\word2vec_people_categories.model")
 df = pd.read_pickle(r"C:\Users\ltkie\OneDrive\Documents\UNC\Fall25\CDC25\Model\Data Analysis\astronauts_with_roles.pkl")
 
 user_profile_aviator = {
@@ -139,7 +139,7 @@ user_profile_non_astronaut = {
     "nationality": "United Kingdom"
 }
 
-user_emb = embed_person(astronaut_model, user_profile_non_astronaut)
+user_emb = embed_person(astronaut_model, user_profile_aviator)
 
 # ---------- Calculate similarity profile for each role ----------
 # Group astronauts by their roles
