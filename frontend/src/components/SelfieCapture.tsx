@@ -152,7 +152,41 @@ export default function SelfieCapture({ onCapture, register, errors }: SelfieCap
               muted
             />
             
-            {/* No overlay - clean camera view */}
+            {/* LinkedIn-style centering grid overlay */}
+            <div className="absolute inset-0 pointer-events-none">
+              {/* Grid lines */}
+              <div className="absolute inset-0">
+                {/* Horizontal lines */}
+                <div className="absolute top-1/3 left-0 w-full h-px bg-white/30"></div>
+                <div className="absolute top-2/3 left-0 w-full h-px bg-white/30"></div>
+                {/* Vertical lines */}
+                <div className="absolute left-1/3 top-0 w-px h-full bg-white/30"></div>
+                <div className="absolute left-2/3 top-0 w-px h-full bg-white/30"></div>
+              </div>
+              
+              {/* Face positioning guide - oval shape for better face centering */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-32 h-40 border-2 border-accent-gold rounded-full border-dashed opacity-70 flex items-center justify-center">
+                  <div className="text-accent-gold text-xs font-semibold text-center">
+                    Center<br/>your face
+                  </div>
+                </div>
+              </div>
+              
+              {/* Corner guides */}
+              <div className="absolute top-4 left-4">
+                <div className="w-4 h-4 border-t-2 border-l-2 border-white/50"></div>
+              </div>
+              <div className="absolute top-4 right-4">
+                <div className="w-4 h-4 border-t-2 border-r-2 border-white/50"></div>
+              </div>
+              <div className="absolute bottom-4 left-4">
+                <div className="w-4 h-4 border-b-2 border-l-2 border-white/50"></div>
+              </div>
+              <div className="absolute bottom-4 right-4">
+                <div className="w-4 h-4 border-b-2 border-r-2 border-white/50"></div>
+              </div>
+            </div>
             
             {/* Loading state */}
             {isLoading && (
@@ -238,8 +272,8 @@ export default function SelfieCapture({ onCapture, register, errors }: SelfieCap
         transition={{ delay: 0.5 }}
       >
         {!isCaptured 
-          ? "Position your face in the circle and click capture"
-          : "Great! Your photo is ready for the space suit effect"
+          ? "Center your face in the oval guide and align with the grid. Make sure your face is well-lit and clearly visible."
+          : "Perfect! Your photo will be composited with the astronaut suit."
         }
       </motion.p>
 

@@ -25,10 +25,10 @@ def process_face_swap(selfie_base64: str, astronaut_suit_path: str = None) -> st
     Returns:
         Base64 encoded result image or None if processing fails
     """
-    # Set default path relative to project root
+    # Set default path relative to project root - use new spacesuit
     if astronaut_suit_path is None:
         import os
-        astronaut_suit_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'frontend', 'public', 'astronaut-suit.png')
+        astronaut_suit_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'frontend', 'public', 'new-astronaut-suit.png')
     
     print(f'\n🎭 === FACE SWAP PROCESSING START ===')
     print(f'📷 Selfie data provided: {"✅ Yes" if selfie_base64 else "❌ No"}')
@@ -167,11 +167,14 @@ def encode_image_to_base64(cv_image):
 def encode_astronaut_suit_fallback():
     """Return base64 encoded astronaut suit image as fallback."""
     import os
-    # Try multiple possible paths for astronaut suit
+    # Try multiple possible paths for new astronaut suit
     possible_paths = [
+        os.path.join(os.path.dirname(os.path.dirname(__file__)), 'frontend', 'public', 'new-astronaut-suit.png'),
+        'frontend/public/new-astronaut-suit.png',
+        os.path.join('frontend', 'public', 'new-astronaut-suit.png'),
+        # Fallback to old suit if new one not found
         os.path.join(os.path.dirname(os.path.dirname(__file__)), 'frontend', 'public', 'astronaut-suit.png'),
-        'frontend/public/astronaut-suit.png',
-        os.path.join('frontend', 'public', 'astronaut-suit.png')
+        'frontend/public/astronaut-suit.png'
     ]
     
     for path in possible_paths:
