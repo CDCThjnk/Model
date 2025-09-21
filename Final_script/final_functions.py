@@ -77,8 +77,8 @@ def embed_person(model: Word2Vec, rec: Dict, cat_weights=None) -> np.ndarray:
 	return np.concatenate([v_edu, v_occ, v_int, v_nat], axis=0)
 
 def find_similar_astronauts(user_profile: Dict[str, Any],
-							model_path: str = r"C:\Users\ltkie\OneDrive\Documents\UNC\Fall25\CDC25\Model\word2vec_people_categories.model",
-							df_path: str = r"C:\Users\ltkie\OneDrive\Documents\UNC\Fall25\CDC25\Model\Data Analysis\astronauts_with_roles.pkl",
+							model_path: str = r"/Users/harjyot/Desktop/code/Model/word2vec_people_categories.model",
+							df_path: str = r"/Users/harjyot/Desktop/code/Model/Data Analysis/astronauts_with_roles.pkl",
 							top_k: int = 3) -> Dict[str, Any]:
 	"""
 	Given a user profile dict, return top_k most similar astronauts and role similarity scores.
@@ -111,15 +111,15 @@ def find_similar_astronauts(user_profile: Dict[str, Any],
 		top_astronauts.append(astro)
 	return {"top_astronauts": top_astronauts, "role_scores": role_corr}
 
-print(find_similar_astronauts(
-	{
-    "name": "Test Artistic Social Worker",
-    "education": [
-        {"institution": "Royal Academy of Dramatic Art"},
-        {"institution": "London School of Social Work"}
-    ],
-    "occupations": ["Actor", "Poet", "Social Worker"],
-    "interests": ["Painting", "Writing Poetry", "Theatre", "Community Volunteering"],
-    "nationality": "United Kingdom"
-}
-))
+# print(find_similar_astronauts(
+# 	{
+#     "name": "Test Artistic Social Worker",
+#     "education": [
+#         {"institution": "Royal Academy of Dramatic Art"},
+#         {"institution": "London School of Social Work"}
+#     ],
+#     "occupations": ["Actor", "Poet", "Social Worker"],
+#     "interests": ["Painting", "Writing Poetry", "Theatre", "Community Volunteering"],
+#     "nationality": "United Kingdom"
+# }
+# ))
