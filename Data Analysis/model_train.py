@@ -59,11 +59,20 @@ def mean_vector(model: Word2Vec, tokens: List[str]) -> np.ndarray:
 # Load data (JSONL)
 # -------------------------
 jsonl_path = Path("../astronauts_structured_fixed.jsonl")
+jsonl_non_astronauts_path = Path("../non_astronauts_600.jsonl")
 
 sentences: List[List[str]] = []
 records: List[Dict] = []
 
 with open(r'C:\Users\ltkie\OneDrive\Documents\UNC\Fall25\CDC25\Model\astronauts_structured_fixed.jsonl', "r", encoding="utf-8") as f:
+    for line in f:
+        if not line.strip():
+            continue
+        rec = json.loads(line)
+        records.append(rec)
+        sentences.append(record_to_sentence(rec))
+
+with open(r'C:\Users\ltkie\OneDrive\Documents\UNC\Fall25\CDC25\Model\non_astronauts_600.jsonl', "r", encoding="utf-8") as f:
     for line in f:
         if not line.strip():
             continue
@@ -112,15 +121,26 @@ for rec in records:
 
 # Example: inspect the single provided record
 df = pd.DataFrame(rows)
+synthetic = [0]*535
+synthetic += [1]*(len(df)-535)
+df["synthetic"] = synthetic
 df.to_pickle("astronauts_embeddings.pkl")
 
 # ---------- Example user profile (replace later with real user data) ----------
+# user_profile = {
+#     "name": "Harjyot",
+#     "education": [{"institution": "UC Berkeley"}],
+#     "occupations": ["computer scientist", "Engineer"],
+#     "interests": ["Aviation", "STEM Education", "Mechanical Engineering"],
+#     "nationality": "United States"
+# }
+
 user_profile = {
-    "name": "Harjyot",
-    "education": [{"institution": "UC Berkeley"}],
-    "occupations": ["computer scientist", "Engineer"],
-    "interests": ["Aviation", "STEM Education", "Mechanical Engineering"],
-    "nationality": "United States"
+    "name": "Test English Scientist",
+    "education": [{"institution": "University of Cambridge"}],
+    "occupations": ["Engineer", "Astronaut"],
+    "interests": ["Astronomy", "Physics", "Tennis"],
+    "nationality": "England"
 }
 
 def embed_person(model: Word2Vec, rec: Dict, cat_weights=None) -> np.ndarray:
