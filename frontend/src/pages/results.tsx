@@ -177,7 +177,10 @@ export default function Results() {
         top_astronauts: [...prev.top_astronauts]
       } : prev)
       
-      // Face swap will be handled by useEffect when userProfile is ready
+      // Process face swap for user's selfie if available
+      if (userProfile?.selfie) {
+        processFaceSwap(userProfile.selfie)
+      }
     }, 100) // Start background processing after 100ms
   }
   
@@ -237,7 +240,8 @@ export default function Results() {
         
         if (response.ok) {
           const data = await response.json()
-          console.log(`Timeline data for ${astronaut['Profile.Name']}:`, data)
+          const astronautName = astronaut['Profile.Name'] || 'Unknown'
+          console.log(`Timeline data for ${astronautName}:`, data)
           // Normalize to exactly 4 points
           const baseTimeline = Array.isArray(data.timeline) ? data.timeline.filter(Boolean) : []
           const normalizedTimeline = baseTimeline.slice(0, 4)
@@ -251,9 +255,10 @@ export default function Results() {
             normalizedTimeline.push(fallbacks[normalizedTimeline.length])
           }
           astronaut.careerTimeline = normalizedTimeline
-          console.log(`Final timeline for ${astronaut['Profile.Name']}:`, astronaut.careerTimeline)
+          console.log(`Final timeline for ${astronautName}:`, astronaut.careerTimeline)
         } else {
-          console.log(`API failed for ${astronaut['Profile.Name']}, using fallback`)
+          const astronautName = astronaut['Profile.Name'] || 'Unknown'
+          console.log(`API failed for ${astronautName}, using fallback`)
           // Fallback timeline - exactly 4 points
           astronaut.careerTimeline = [
             'Selected for astronaut training program',

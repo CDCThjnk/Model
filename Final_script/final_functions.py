@@ -123,7 +123,7 @@ def find_similar_astronauts(user_profile: Dict[str, Any],
                         break
                         
                 astro = df.iloc[idx].to_dict()
-                astro_name = astro.get('name', '')
+                astro_name = astro.get('Profile.Name', '')
                 
                 # Skip if we've already seen this astronaut or if name is empty
                 if astro_name in seen_names or not astro_name.strip():
@@ -141,7 +141,7 @@ def find_similar_astronauts(user_profile: Dict[str, Any],
                                 break
                                 
                         astro = df.iloc[idx].to_dict()
-                        astro_name = astro.get('name', '')
+                        astro_name = astro.get('Profile.Name', '')
                         
                         # Skip if we've already seen this astronaut or if name is empty
                         if astro_name in seen_names or not astro_name.strip():

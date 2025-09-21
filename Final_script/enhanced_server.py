@@ -13,6 +13,7 @@ import json
 from werkzeug.utils import secure_filename
 import openai
 from datetime import datetime
+from face_swap import process_face_swap
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -380,6 +381,35 @@ def generate_career_timeline():
         
     except Exception as e:
         log.error(f"Error generating career timeline: {e}")
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/process_face_swap', methods=['POST'])
+def process_face_swap_endpoint():
+    """
+    Process face swapping with astronaut suit helmet
+    """
+    try:
+        data = request.get_json(silent=True) or {}
+        selfie_data = data.get('selfie', '')
+        
+        if not selfie_data:
+            return jsonify({"error": "No selfie data provided"}), 400
+            
+        # Process face swap
+        result_image = process_face_swap(selfie_data)
+        
+        if result_image:
+            return jsonify({"astronaut_image": result_image})
+        else:
+            # Return original astronaut suit if face swap fails
+            import base64
+            with open("frontend/public/astronaut-suit.png", "rb") as f:
+                suit_data = base64.b64encode(f.read()).decode('utf-8')
+                return jsonify({"astronaut_image": f"data:image/png;base64,{suit_data}"})
+                
+    except Exception as e:
+        log.error(f"Error in face swap endpoint: {e}")
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
