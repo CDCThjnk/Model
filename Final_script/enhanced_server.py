@@ -103,7 +103,8 @@ def get_profiles_from_names(names: List[str], csv_path: str = CSV_PATH) -> List[
 def extract_names(items: List[Dict[str, Any]]) -> List[str]:
     names = []
     for a in items:
-        n = a.get('Name') or a.get('name')
+        # Fix: Check for 'Profile.Name' field as well as 'Name' and 'name'
+        n = a.get('Profile.Name') or a.get('Name') or a.get('name')
         if isinstance(n, str) and n.strip():
             names.append(n.strip())
     return names
@@ -199,9 +200,26 @@ def similar_astronauts():
         except (TypeError, ValueError):
             return jsonify({"error": "top_k must be an integer"}), 400
 
+        print(f'\n🔍 CALLING MATCHING ALGORITHM...')
         result = find_similar_astronauts(user_profile, top_k=top_k)
+        print(f'✅ Matching algorithm completed')
 
         top_astronauts = result.get('top_astronauts', [])
+        role_scores = result.get('role_scores', {})
+        
+        print(f'\n📊 MATCHING RESULTS:')
+        print(f'   Number of astronauts found: {len(top_astronauts)}')
+        print(f'   Role scores: {role_scores}')
+        
+        if top_astronauts:
+            print(f'\n👨‍🚀 ASTRONAUT DETAILS:')
+            for i, astronaut in enumerate(top_astronauts[:3], 1):
+                name = astronaut.get('Profile.Name', 'Unknown')
+                similarity = astronaut.get('similarity', 0)
+                print(f'   {i}. {name} (similarity: {similarity:.4f})')
+        else:
+            print('\n❌ NO ASTRONAUTS FOUND - This indicates a data loading or algorithm issue')
+        
         log.info(f"Original top_astronauts count: {len(top_astronauts)}")
         if top_astronauts:
             log.info(f"First astronaut keys: {list(top_astronauts[0].keys())}")
@@ -387,28 +405,42 @@ def generate_career_timeline():
 @app.route('/process_face_swap', methods=['POST'])
 def process_face_swap_endpoint():
     """
-    Process face swapping with astronaut suit helmet
+    Process face swapping with astronaut suit helmet - WITH COMPREHENSIVE CONSOLE LOGGING
     """
     try:
+        print(f'\n🎭 FACE SWAPPING API CALLED')
         data = request.get_json(silent=True) or {}
         selfie_data = data.get('selfie', '')
         
+        print(f'📷 Selfie data received: {"✅ Yes" if selfie_data else "❌ No"}')
+        if selfie_data:
+            print(f'📏 Selfie data length: {len(selfie_data)} characters')
+            print(f'🎨 Data format: {selfie_data[:50]}...')
+        
         if not selfie_data:
+            print('❌ No selfie data provided - returning error')
             return jsonify({"error": "No selfie data provided"}), 400
             
-        # Process face swap
+        print(f'🔄 Processing face swap...')
+        # Process face swap with detailed logging
         result_image = process_face_swap(selfie_data)
         
         if result_image:
+            print(f'✅ Face swap successful!')
+            print(f'📤 Returning processed image (length: {len(result_image)} chars)')
             return jsonify({"astronaut_image": result_image})
         else:
+            print('⚠️  Face swap failed - returning astronaut suit fallback')
             # Return original astronaut suit if face swap fails
             import base64
             with open("frontend/public/astronaut-suit.png", "rb") as f:
                 suit_data = base64.b64encode(f.read()).decode('utf-8')
-                return jsonify({"astronaut_image": f"data:image/png;base64,{suit_data}"})
+                fallback_result = f"data:image/png;base64,{suit_data}"
+                print(f'📤 Returning fallback image (length: {len(fallback_result)} chars)')
+                return jsonify({"astronaut_image": fallback_result})
                 
     except Exception as e:
+        print(f'❌ ERROR in face swap endpoint: {e}')
         log.error(f"Error in face swap endpoint: {e}")
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
@@ -418,5 +450,9 @@ def health_check():
     return jsonify({"status": "healthy", "timestamp": datetime.now().isoformat()})
 
 if __name__ == '__main__':
+    # Backend runs on port 3001, frontend proxies to it so user sees everything on port 5000
     port = int(os.environ.get('PORT', 3001))
+    print(f"\n🚀 Starting Backend API on port {port}")
+    print(f"📊 Console logging enabled for comprehensive debugging")
+    print(f"🌐 Frontend proxies to this backend - everything appears on port 5000 to user")
     app.run(debug=True, port=port, host='0.0.0.0')
