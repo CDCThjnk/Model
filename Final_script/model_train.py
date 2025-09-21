@@ -112,38 +112,3 @@ synthetic = [0]*535
 synthetic += [1]*(len(df)-535)
 df["synthetic"] = synthetic
 df.to_pickle("astronauts_embeddings.pkl")
-
-# ------------------------- Example similarity search -------------------------
-user_profile = {
-    "name": "Test English Scientist",
-    "education": [{"institution": "University of Cambridge"}],
-    "occupations": ["Engineer", "Astronaut"],
-    "interests": ["Astronomy", "Physics", "Tennis"],
-    "nationality": "England"
-}
-
-def embed_person(model: Word2Vec, rec: Dict, cat_weights=None) -> np.ndarray:
-    """Return concatenated (weighted) category embedding."""
-    if cat_weights is None:
-        cat_weights = {"education":1.0, "occupation":1.0, "interest":0.5, "nationality":0.7}
-
-    cats = extract_category_tokens(rec)
-    v_edu = mean_vector(model, cats["education"]) * cat_weights["education"]
-    v_occ = mean_vector(model, cats["occupation"]) * cat_weights["occupation"]
-    v_int = mean_vector(model, cats["interest"]) * cat_weights["interest"]
-    v_nat = mean_vector(model, cats["nationality"]) * cat_weights["nationality"]
-    return np.concatenate([v_edu, v_occ, v_int, v_nat], axis=0)
-
-user_emb = embed_person(model, user_profile)
-
-# ---------- Similarity computation ----------
-astro_mat = np.vstack(df["embedding_concat"].values)  
-user_mat = user_emb.reshape(1, -1)                               
-sims = cosine_similarity(user_mat, astro_mat).ravel()            
-
-top_k = 3
-rank_idx = np.argsort(-sims)[:top_k]
-
-print("Top similar astronauts:")
-for rank, idx in enumerate(rank_idx, 1):
-    print(f"{rank}. {df.iloc[idx]}: similarity={sims[idx]:.3f}")
