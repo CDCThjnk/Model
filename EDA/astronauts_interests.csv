@@ -1,0 +1,1221 @@
+name,interests,nationality,age,cleaned_name,Mission.Role
+Aleksandr Kaleri,running,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,reading,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,gardening,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,running,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,reading,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,gardening,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,running,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,reading,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,gardening,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,running,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,reading,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,gardening,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,running,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,reading,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksandr Kaleri,gardening,Russia,69.0,Aleksandr Kaleri,flight engineer
+Aleksey Ovchinin,hunting,Russia,53.0,Aleksey Ovchinin,commander
+Aleksey Ovchinin,fishing,Russia,53.0,Aleksey Ovchinin,commander
+Aleksey Ovchinin,music,Russia,53.0,Aleksey Ovchinin,commander
+Aleksey Ovchinin,hunting,Russia,53.0,Aleksey Ovchinin,commander
+Aleksey Ovchinin,fishing,Russia,53.0,Aleksey Ovchinin,commander
+Aleksey Ovchinin,music,Russia,53.0,Aleksey Ovchinin,commander
+Aleksey Ovchinin,hunting,Russia,53.0,Aleksey Ovchinin,commander
+Aleksey Ovchinin,fishing,Russia,53.0,Aleksey Ovchinin,commander
+Aleksey Ovchinin,music,Russia,53.0,Aleksey Ovchinin,commander
+Alexander Gerst,mountaineering,Germany,49.0,Alexander Gerst,flight engineer
+Alexander Gerst,diving,Germany,49.0,Alexander Gerst,flight engineer
+Alexander Gerst,climbing,Germany,49.0,Alexander Gerst,flight engineer
+Alexander Gerst,skydiving,Germany,49.0,Alexander Gerst,flight engineer
+Alexander Gerst,mountaineering,Germany,49.0,Alexander Gerst,flight engineer
+Alexander Gerst,diving,Germany,49.0,Alexander Gerst,flight engineer
+Alexander Gerst,climbing,Germany,49.0,Alexander Gerst,flight engineer
+Alexander Gerst,skydiving,Germany,49.0,Alexander Gerst,flight engineer
+Andrew Feustel,automobile restoration,United States,60.0,Andrew Feustel,msp
+Andrew Feustel,skiing,United States,60.0,Andrew Feustel,msp
+Andrew Feustel,guitar,United States,60.0,Andrew Feustel,msp
+Andrew Feustel,member of the astronaut band Max Q,United States,60.0,Andrew Feustel,msp
+Andrew Feustel,automobile restoration,United States,60.0,Andrew Feustel,msp
+Andrew Feustel,skiing,United States,60.0,Andrew Feustel,msp
+Andrew Feustel,guitar,United States,60.0,Andrew Feustel,msp
+Andrew Feustel,member of the astronaut band Max Q,United States,60.0,Andrew Feustel,msp
+Andrew Feustel,automobile restoration,United States,60.0,Andrew Feustel,flight engineer
+Andrew Feustel,skiing,United States,60.0,Andrew Feustel,flight engineer
+Andrew Feustel,guitar,United States,60.0,Andrew Feustel,flight engineer
+Andrew Feustel,member of the astronaut band Max Q,United States,60.0,Andrew Feustel,flight engineer
+Anthony England,sailing,American,83.0,Anthony England,msp
+Anthony England,amateur radio,American,83.0,Anthony England,msp
+Anton Shkaplerov,sports,Russia,53.0,Anton Shkaplerov,commander
+Anton Shkaplerov,travel,Russia,53.0,Anton Shkaplerov,commander
+Anton Shkaplerov,fishing,Russia,53.0,Anton Shkaplerov,commander
+Anton Shkaplerov,golf,Russia,53.0,Anton Shkaplerov,commander
+Anton Shkaplerov,sports,Russia,53.0,Anton Shkaplerov,commander
+Anton Shkaplerov,travel,Russia,53.0,Anton Shkaplerov,commander
+Anton Shkaplerov,fishing,Russia,53.0,Anton Shkaplerov,commander
+Anton Shkaplerov,golf,Russia,53.0,Anton Shkaplerov,commander
+Anton Shkaplerov,sports,Russia,53.0,Anton Shkaplerov,commander
+Anton Shkaplerov,travel,Russia,53.0,Anton Shkaplerov,commander
+Anton Shkaplerov,fishing,Russia,53.0,Anton Shkaplerov,commander
+Anton Shkaplerov,golf,Russia,53.0,Anton Shkaplerov,commander
+Barbara Morgan,jazz,American,73.0,Barbara Morgan,msp
+Barbara Morgan,literature,American,73.0,Barbara Morgan,msp
+Barbara Morgan,hiking,American,73.0,Barbara Morgan,msp
+Barbara Morgan,swimming,American,73.0,Barbara Morgan,msp
+Barbara Morgan,cross-country skiing,American,73.0,Barbara Morgan,msp
+Barry Wilmore,Christian,American,62.0,Barry Wilmore,pilot
+Barry Wilmore,attending remote Sunday services,American,62.0,Barry Wilmore,pilot
+Barry Wilmore,Christian,American,62.0,Barry Wilmore,flight engineer
+Barry Wilmore,attending remote Sunday services,American,62.0,Barry Wilmore,flight engineer
+Bonnie Dunbar,reading science fiction novels,United States,76.0,Bonnie Dunbar,msp
+Bonnie Dunbar,following the Mercury Seven exploits,United States,76.0,Bonnie Dunbar,msp
+Bonnie Dunbar,reading science fiction novels,United States,76.0,Bonnie Dunbar,msp
+Bonnie Dunbar,following the Mercury Seven exploits,United States,76.0,Bonnie Dunbar,msp
+Bonnie Dunbar,reading science fiction novels,United States,76.0,Bonnie Dunbar,msp
+Bonnie Dunbar,following the Mercury Seven exploits,United States,76.0,Bonnie Dunbar,msp
+Bonnie Dunbar,reading science fiction novels,United States,76.0,Bonnie Dunbar,msp
+Bonnie Dunbar,following the Mercury Seven exploits,United States,76.0,Bonnie Dunbar,msp
+Bonnie Dunbar,reading science fiction novels,United States,76.0,Bonnie Dunbar,msp
+Bonnie Dunbar,following the Mercury Seven exploits,United States,76.0,Bonnie Dunbar,msp
+Brent Jett,water skiing,American,66.0,Brent Jett,pilot
+Brent Jett,snow skiing,American,66.0,Brent Jett,pilot
+Brent Jett,board sailing,American,66.0,Brent Jett,pilot
+Brent Jett,boating,American,66.0,Brent Jett,pilot
+Brent Jett,running,American,66.0,Brent Jett,pilot
+Brent Jett,basketball,American,66.0,Brent Jett,pilot
+Brent Jett,squash,American,66.0,Brent Jett,pilot
+Brent Jett,water skiing,American,66.0,Brent Jett,pilot
+Brent Jett,snow skiing,American,66.0,Brent Jett,pilot
+Brent Jett,board sailing,American,66.0,Brent Jett,pilot
+Brent Jett,boating,American,66.0,Brent Jett,pilot
+Brent Jett,running,American,66.0,Brent Jett,pilot
+Brent Jett,basketball,American,66.0,Brent Jett,pilot
+Brent Jett,squash,American,66.0,Brent Jett,pilot
+Brent Jett,water skiing,American,66.0,Brent Jett,commander
+Brent Jett,snow skiing,American,66.0,Brent Jett,commander
+Brent Jett,board sailing,American,66.0,Brent Jett,commander
+Brent Jett,boating,American,66.0,Brent Jett,commander
+Brent Jett,running,American,66.0,Brent Jett,commander
+Brent Jett,basketball,American,66.0,Brent Jett,commander
+Brent Jett,squash,American,66.0,Brent Jett,commander
+Brent Jett,water skiing,American,66.0,Brent Jett,commander
+Brent Jett,snow skiing,American,66.0,Brent Jett,commander
+Brent Jett,board sailing,American,66.0,Brent Jett,commander
+Brent Jett,boating,American,66.0,Brent Jett,commander
+Brent Jett,running,American,66.0,Brent Jett,commander
+Brent Jett,basketball,American,66.0,Brent Jett,commander
+Brent Jett,squash,American,66.0,Brent Jett,commander
+Carl Walz,piano and vocal music,U.S.,70.0,Carl Walz,msp
+Carl Walz,sports,U.S.,70.0,Carl Walz,msp
+Carl Walz,piano and vocal music,U.S.,70.0,Carl Walz,msp
+Carl Walz,sports,U.S.,70.0,Carl Walz,msp
+Carl Walz,piano and vocal music,U.S.,70.0,Carl Walz,msp
+Carl Walz,sports,U.S.,70.0,Carl Walz,msp
+Carl Walz,piano and vocal music,U.S.,70.0,Carl Walz,msp
+Carl Walz,sports,U.S.,70.0,Carl Walz,msp
+Carl Meade,woodworking,U.S.,74.0,Carl Meade,msp
+Carl Meade,home-built aircraft construction,U.S.,74.0,Carl Meade,msp
+Carl Meade,racquetball,U.S.,74.0,Carl Meade,msp
+Carl Meade,jogging,U.S.,74.0,Carl Meade,msp
+Carl Meade,snow skiing,U.S.,74.0,Carl Meade,msp
+Carl Meade,woodworking,U.S.,74.0,Carl Meade,msp
+Carl Meade,home-built aircraft construction,U.S.,74.0,Carl Meade,msp
+Carl Meade,racquetball,U.S.,74.0,Carl Meade,msp
+Carl Meade,jogging,U.S.,74.0,Carl Meade,msp
+Carl Meade,snow skiing,U.S.,74.0,Carl Meade,msp
+Carl Meade,woodworking,U.S.,74.0,Carl Meade,msp
+Carl Meade,home-built aircraft construction,U.S.,74.0,Carl Meade,msp
+Carl Meade,racquetball,U.S.,74.0,Carl Meade,msp
+Carl Meade,jogging,U.S.,74.0,Carl Meade,msp
+Carl Meade,snow skiing,U.S.,74.0,Carl Meade,msp
+Charles Gemar,water sports,United States,70.0,Charles Gemar,msp
+Charles Gemar,jogging,United States,70.0,Charles Gemar,msp
+Charles Gemar,woodworking,United States,70.0,Charles Gemar,msp
+Charles Gemar,traveling,United States,70.0,Charles Gemar,msp
+Charles Gemar,water sports,United States,70.0,Charles Gemar,msp
+Charles Gemar,jogging,United States,70.0,Charles Gemar,msp
+Charles Gemar,woodworking,United States,70.0,Charles Gemar,msp
+Charles Gemar,traveling,United States,70.0,Charles Gemar,msp
+Charles Gemar,water sports,United States,70.0,Charles Gemar,msp
+Charles Gemar,jogging,United States,70.0,Charles Gemar,msp
+Charles Gemar,woodworking,United States,70.0,Charles Gemar,msp
+Charles Gemar,traveling,United States,70.0,Charles Gemar,msp
+Charles Hobaugh,weight lifting,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,volleyball,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,boating,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,water skiing,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,snow skiing,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,soccer,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,bicycling,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,running,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,rowing,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,competing in triathlons,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,weight lifting,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,volleyball,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,boating,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,water skiing,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,snow skiing,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,soccer,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,bicycling,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,running,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,rowing,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,competing in triathlons,U.S.,63.0,Charles Hobaugh,pilot
+Charles Hobaugh,weight lifting,U.S.,63.0,Charles Hobaugh,commander
+Charles Hobaugh,volleyball,U.S.,63.0,Charles Hobaugh,commander
+Charles Hobaugh,boating,U.S.,63.0,Charles Hobaugh,commander
+Charles Hobaugh,water skiing,U.S.,63.0,Charles Hobaugh,commander
+Charles Hobaugh,snow skiing,U.S.,63.0,Charles Hobaugh,commander
+Charles Hobaugh,soccer,U.S.,63.0,Charles Hobaugh,commander
+Charles Hobaugh,bicycling,U.S.,63.0,Charles Hobaugh,commander
+Charles Hobaugh,running,U.S.,63.0,Charles Hobaugh,commander
+Charles Hobaugh,rowing,U.S.,63.0,Charles Hobaugh,commander
+Charles Hobaugh,competing in triathlons,U.S.,63.0,Charles Hobaugh,commander
+Chiaki Mukai,snow skiing,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,Alpine competitive skiing,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,bass fishing,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,scuba diving,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,tennis,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,golf,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,photography,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,American literature,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,traveling,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,snow skiing,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,Alpine competitive skiing,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,bass fishing,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,scuba diving,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,tennis,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,golf,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,photography,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,American literature,Japan,73.0,Chiaki Mukai,psp
+Chiaki Mukai,traveling,Japan,73.0,Chiaki Mukai,psp
+Christer Fuglesang,Skeptics and atheists,Sweden,68.0,Christer Fuglesang,msp
+Christer Fuglesang,Skeptics and atheists,Sweden,68.0,Christer Fuglesang,msp
+Christina Koch,backpacking,American,46.0,Christina Koch,flight engineer
+Christina Koch,rock climbing,American,46.0,Christina Koch,flight engineer
+Christina Koch,paddling,American,46.0,Christina Koch,flight engineer
+Christina Koch,sailing,American,46.0,Christina Koch,flight engineer
+Christina Koch,running,American,46.0,Christina Koch,flight engineer
+Christina Koch,yoga,American,46.0,Christina Koch,flight engineer
+Christina Koch,community service,American,46.0,Christina Koch,flight engineer
+Christina Koch,photography,American,46.0,Christina Koch,flight engineer
+Christina Koch,surfing,American,46.0,Christina Koch,flight engineer
+Christina Koch,travel,American,46.0,Christina Koch,flight engineer
+Dafydd Rhys Williams,flying,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,scuba diving,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,hiking,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,sailing,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,kayaking,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,canoeing,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,downhill skiing,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,cross-country skiing,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,flying,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,scuba diving,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,hiking,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,sailing,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,kayaking,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,canoeing,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,downhill skiing,Canada,71.0,Dafydd Rhys Williams,msp
+Dafydd Rhys Williams,cross-country skiing,Canada,71.0,Dafydd Rhys Williams,msp
+Daniel Burbank,licensed amateur radio operator,American,64.0,Daniel Burbank,msp
+Daniel Burbank,member of the astronaut band 'Max Q',American,64.0,Daniel Burbank,msp
+Daniel Burbank,former member of The Idlers,American,64.0,Daniel Burbank,msp
+Daniel Burbank,licensed amateur radio operator,American,64.0,Daniel Burbank,msp
+Daniel Burbank,member of the astronaut band 'Max Q',American,64.0,Daniel Burbank,msp
+Daniel Burbank,former member of The Idlers,American,64.0,Daniel Burbank,msp
+Daniel Burbank,licensed amateur radio operator,American,64.0,Daniel Burbank,commander
+Daniel Burbank,member of the astronaut band 'Max Q',American,64.0,Daniel Burbank,commander
+Daniel Burbank,former member of The Idlers,American,64.0,Daniel Burbank,commander
+Daniel Tani,golf,United States,64.0,Daniel Tani,msp
+Daniel Tani,flying,United States,64.0,Daniel Tani,msp
+Daniel Tani,running,United States,64.0,Daniel Tani,msp
+Daniel Tani,tennis,United States,64.0,Daniel Tani,msp
+Daniel Tani,music,United States,64.0,Daniel Tani,msp
+Daniel Tani,cooking,United States,64.0,Daniel Tani,msp
+Daniel Tani,golf,United States,64.0,Daniel Tani,msp
+Daniel Tani,flying,United States,64.0,Daniel Tani,msp
+Daniel Tani,running,United States,64.0,Daniel Tani,msp
+Daniel Tani,tennis,United States,64.0,Daniel Tani,msp
+Daniel Tani,music,United States,64.0,Daniel Tani,msp
+Daniel Tani,cooking,United States,64.0,Daniel Tani,msp
+David Hilmers,playing the piano,U.S.,75.0,David Hilmers,msp
+David Hilmers,gardening,U.S.,75.0,David Hilmers,msp
+David Hilmers,electronics,U.S.,75.0,David Hilmers,msp
+David Hilmers,spending time with his family,U.S.,75.0,David Hilmers,msp
+David Hilmers,all types of sports,U.S.,75.0,David Hilmers,msp
+David Hilmers,playing the piano,U.S.,75.0,David Hilmers,msp
+David Hilmers,gardening,U.S.,75.0,David Hilmers,msp
+David Hilmers,electronics,U.S.,75.0,David Hilmers,msp
+David Hilmers,spending time with his family,U.S.,75.0,David Hilmers,msp
+David Hilmers,all types of sports,U.S.,75.0,David Hilmers,msp
+David Hilmers,playing the piano,U.S.,75.0,David Hilmers,msp
+David Hilmers,gardening,U.S.,75.0,David Hilmers,msp
+David Hilmers,electronics,U.S.,75.0,David Hilmers,msp
+David Hilmers,spending time with his family,U.S.,75.0,David Hilmers,msp
+David Hilmers,all types of sports,U.S.,75.0,David Hilmers,msp
+David Hilmers,playing the piano,U.S.,75.0,David Hilmers,msp
+David Hilmers,gardening,U.S.,75.0,David Hilmers,msp
+David Hilmers,electronics,U.S.,75.0,David Hilmers,msp
+David Hilmers,spending time with his family,U.S.,75.0,David Hilmers,msp
+David Hilmers,all types of sports,U.S.,75.0,David Hilmers,msp
+Dmitri Kondratyev,computers,Russia,56.0,Dmitri Kondratyev,commander
+Dmitri Kondratyev,karate,Russia,56.0,Dmitri Kondratyev,commander
+Dmitri Kondratyev,economics,Russia,56.0,Dmitri Kondratyev,commander
+Dmitri Kondratyev,fishing,Russia,56.0,Dmitri Kondratyev,commander
+Duane Carey,National Space Society,United States,68.0,Duane Carey,pilot
+Duane Carey,American Motorcyclist Association,United States,68.0,Duane Carey,pilot
+Duane Carey,Air Force Association,United States,68.0,Duane Carey,pilot
+Edward Gibson,swimming,U.S.,88.0,Edward Gibson,msp
+Edward Gibson,football,U.S.,88.0,Edward Gibson,msp
+Edward Gibson,track,U.S.,88.0,Edward Gibson,msp
+Edward Gibson,swimming (for rehabilitation),U.S.,88.0,Edward Gibson,msp
+Edward Gibson,Boy Scouts of America,U.S.,88.0,Edward Gibson,msp
+Eileen Collins,Astronautics,American,68.0,Eileen Collins,pilot
+Eileen Collins,Aviation,American,68.0,Eileen Collins,pilot
+Eileen Collins,Space exploration,American,68.0,Eileen Collins,pilot
+Eileen Collins,Astronautics,American,68.0,Eileen Collins,pilot
+Eileen Collins,Aviation,American,68.0,Eileen Collins,pilot
+Eileen Collins,Space exploration,American,68.0,Eileen Collins,pilot
+Eileen Collins,Astronautics,American,68.0,Eileen Collins,commander
+Eileen Collins,Aviation,American,68.0,Eileen Collins,commander
+Eileen Collins,Space exploration,American,68.0,Eileen Collins,commander
+Eileen Collins,Astronautics,American,68.0,Eileen Collins,commander
+Eileen Collins,Aviation,American,68.0,Eileen Collins,commander
+Eileen Collins,Space exploration,American,68.0,Eileen Collins,commander
+Ellen Ochoa,playing the flute,United States,67.0,Ellen Ochoa,msp
+Ellen Ochoa,playing the flute,United States,67.0,Ellen Ochoa,msp
+Ellen Ochoa,playing the flute,United States,67.0,Ellen Ochoa,msp
+Ellen Ochoa,playing the flute,United States,67.0,Ellen Ochoa,msp
+Frank De Winne,football,Belgium,64.0,Frank De Winne,commander
+Frank De Winne,small PC applications,Belgium,64.0,Frank De Winne,commander
+Frank De Winne,gastronomy,Belgium,64.0,Frank De Winne,commander
+Frank De Winne,football,Belgium,64.0,Frank De Winne,commander
+Frank De Winne,small PC applications,Belgium,64.0,Frank De Winne,commander
+Frank De Winne,gastronomy,Belgium,64.0,Frank De Winne,commander
+Franklin Story Musgrave,chess,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,flying,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,gardening,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,literary criticism,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,poetry,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,microcomputers,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,parachuting,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,photography,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,reading,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,running,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,scuba diving,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,soaring,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,chess,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,flying,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,gardening,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,literary criticism,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,poetry,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,microcomputers,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,parachuting,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,photography,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,reading,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,running,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,scuba diving,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,soaring,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,chess,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,flying,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,gardening,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,literary criticism,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,poetry,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,microcomputers,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,parachuting,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,photography,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,reading,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,running,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,scuba diving,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,soaring,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,chess,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,flying,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,gardening,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,literary criticism,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,poetry,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,microcomputers,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,parachuting,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,photography,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,reading,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,running,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,scuba diving,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,soaring,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,chess,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,flying,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,gardening,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,literary criticism,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,poetry,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,microcomputers,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,parachuting,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,photography,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,reading,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,running,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,scuba diving,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,soaring,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,chess,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,flying,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,gardening,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,literary criticism,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,poetry,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,microcomputers,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,parachuting,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,photography,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,reading,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,running,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,scuba diving,United States,90.0,Franklin Story Musgrave,msp
+Franklin Story Musgrave,soaring,United States,90.0,Franklin Story Musgrave,msp
+Frederick Gregory,reading,United States,84.0,Frederick Gregory,pilot
+Frederick Gregory,boating,United States,84.0,Frederick Gregory,pilot
+Frederick Gregory,hiking,United States,84.0,Frederick Gregory,pilot
+Frederick Gregory,diving,United States,84.0,Frederick Gregory,pilot
+Frederick Gregory,biking,United States,84.0,Frederick Gregory,pilot
+Frederick Gregory,traveling,United States,84.0,Frederick Gregory,pilot
+Frederick Gregory,reading,United States,84.0,Frederick Gregory,commander
+Frederick Gregory,boating,United States,84.0,Frederick Gregory,commander
+Frederick Gregory,hiking,United States,84.0,Frederick Gregory,commander
+Frederick Gregory,diving,United States,84.0,Frederick Gregory,commander
+Frederick Gregory,biking,United States,84.0,Frederick Gregory,commander
+Frederick Gregory,traveling,United States,84.0,Frederick Gregory,commander
+Frederick Gregory,reading,United States,84.0,Frederick Gregory,commander
+Frederick Gregory,boating,United States,84.0,Frederick Gregory,commander
+Frederick Gregory,hiking,United States,84.0,Frederick Gregory,commander
+Frederick Gregory,diving,United States,84.0,Frederick Gregory,commander
+Frederick Gregory,biking,United States,84.0,Frederick Gregory,commander
+Frederick Gregory,traveling,United States,84.0,Frederick Gregory,commander
+Frederick Sturckow,flying,U.S.,64.0,Frederick Sturckow,pilot
+Frederick Sturckow,physical training,U.S.,64.0,Frederick Sturckow,pilot
+Frederick Sturckow,flying,U.S.,64.0,Frederick Sturckow,pilot
+Frederick Sturckow,physical training,U.S.,64.0,Frederick Sturckow,pilot
+Frederick Sturckow,flying,U.S.,64.0,Frederick Sturckow,commander
+Frederick Sturckow,physical training,U.S.,64.0,Frederick Sturckow,commander
+Frederick Sturckow,flying,U.S.,64.0,Frederick Sturckow,commander
+Frederick Sturckow,physical training,U.S.,64.0,Frederick Sturckow,commander
+Fyodor Yurchikhin,collecting stamps and space logos,Russia,66.0,Fyodor Yurchikhin,msp
+Fyodor Yurchikhin,sports,Russia,66.0,Fyodor Yurchikhin,msp
+Fyodor Yurchikhin,history of cosmonautics,Russia,66.0,Fyodor Yurchikhin,msp
+Fyodor Yurchikhin,promotion of space,Russia,66.0,Fyodor Yurchikhin,msp
+Fyodor Yurchikhin,reading history,Russia,66.0,Fyodor Yurchikhin,msp
+Fyodor Yurchikhin,science fiction,Russia,66.0,Fyodor Yurchikhin,msp
+Fyodor Yurchikhin,the classics,Russia,66.0,Fyodor Yurchikhin,msp
+Fyodor Yurchikhin,collecting stamps and space logos,Russia,66.0,Fyodor Yurchikhin,flight engineer
+Fyodor Yurchikhin,sports,Russia,66.0,Fyodor Yurchikhin,flight engineer
+Fyodor Yurchikhin,history of cosmonautics,Russia,66.0,Fyodor Yurchikhin,flight engineer
+Fyodor Yurchikhin,promotion of space,Russia,66.0,Fyodor Yurchikhin,flight engineer
+Fyodor Yurchikhin,reading history,Russia,66.0,Fyodor Yurchikhin,flight engineer
+Fyodor Yurchikhin,science fiction,Russia,66.0,Fyodor Yurchikhin,flight engineer
+Fyodor Yurchikhin,the classics,Russia,66.0,Fyodor Yurchikhin,flight engineer
+Fyodor Yurchikhin,collecting stamps and space logos,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,sports,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,history of cosmonautics,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,promotion of space,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,reading history,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,science fiction,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,the classics,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,collecting stamps and space logos,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,sports,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,history of cosmonautics,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,promotion of space,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,reading history,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,science fiction,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,the classics,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,collecting stamps and space logos,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,sports,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,history of cosmonautics,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,promotion of space,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,reading history,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,science fiction,Russia,66.0,Fyodor Yurchikhin,commander
+Fyodor Yurchikhin,the classics,Russia,66.0,Fyodor Yurchikhin,commander
+Gennady Padalka,theater,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,parachute sport,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,diving,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,theater,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,parachute sport,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,diving,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,theater,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,parachute sport,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,diving,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,theater,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,parachute sport,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,diving,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,theater,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,parachute sport,Russia,67.0,Gennady Padalka,commander
+Gennady Padalka,diving,Russia,67.0,Gennady Padalka,commander
+George Zamka,weightlifting,U.S.,63.0,George Zamka,pilot
+George Zamka,running,U.S.,63.0,George Zamka,pilot
+George Zamka,bicycling,U.S.,63.0,George Zamka,pilot
+George Zamka,scuba diving,U.S.,63.0,George Zamka,pilot
+George Zamka,boating,U.S.,63.0,George Zamka,pilot
+George Zamka,weightlifting,U.S.,63.0,George Zamka,commander
+George Zamka,running,U.S.,63.0,George Zamka,commander
+George Zamka,bicycling,U.S.,63.0,George Zamka,commander
+George Zamka,scuba diving,U.S.,63.0,George Zamka,commander
+George Zamka,boating,U.S.,63.0,George Zamka,commander
+Gregory Johnson,athletics,United States,71.0,Gregory Johnson,pilot
+Gregory Johnson,cycling,United States,71.0,Gregory Johnson,pilot
+Gregory Johnson,swimming,United States,71.0,Gregory Johnson,pilot
+Gregory Johnson,auto repair,United States,71.0,Gregory Johnson,pilot
+Gregory Johnson,athletics,United States,71.0,Gregory Johnson,pilot
+Gregory Johnson,cycling,United States,71.0,Gregory Johnson,pilot
+Gregory Johnson,swimming,United States,71.0,Gregory Johnson,pilot
+Gregory Johnson,auto repair,United States,71.0,Gregory Johnson,pilot
+Gregory Johnson,athletics,United States,71.0,Gregory Johnson,pilot
+Gregory Johnson,cycling,United States,71.0,Gregory Johnson,pilot
+Gregory Johnson,swimming,United States,71.0,Gregory Johnson,pilot
+Gregory Johnson,auto repair,United States,71.0,Gregory Johnson,pilot
+Gregory Chamitoff,scuba diving,USA,63.0,Gregory Chamitoff,flight engineer
+Gregory Chamitoff,backpacking,USA,63.0,Gregory Chamitoff,flight engineer
+Gregory Chamitoff,flying,USA,63.0,Gregory Chamitoff,flight engineer
+Gregory Chamitoff,skiing,USA,63.0,Gregory Chamitoff,flight engineer
+Gregory Chamitoff,racquetball,USA,63.0,Gregory Chamitoff,flight engineer
+Gregory Chamitoff,Aikido,USA,63.0,Gregory Chamitoff,flight engineer
+Gregory Chamitoff,juggling,USA,63.0,Gregory Chamitoff,flight engineer
+Gregory Chamitoff,magic,USA,63.0,Gregory Chamitoff,flight engineer
+Gregory Chamitoff,guitar,USA,63.0,Gregory Chamitoff,flight engineer
+Gregory Chamitoff,chess,USA,63.0,Gregory Chamitoff,flight engineer
+Gregory Chamitoff,scuba diving,USA,63.0,Gregory Chamitoff,msp
+Gregory Chamitoff,backpacking,USA,63.0,Gregory Chamitoff,msp
+Gregory Chamitoff,flying,USA,63.0,Gregory Chamitoff,msp
+Gregory Chamitoff,skiing,USA,63.0,Gregory Chamitoff,msp
+Gregory Chamitoff,racquetball,USA,63.0,Gregory Chamitoff,msp
+Gregory Chamitoff,Aikido,USA,63.0,Gregory Chamitoff,msp
+Gregory Chamitoff,juggling,USA,63.0,Gregory Chamitoff,msp
+Gregory Chamitoff,magic,USA,63.0,Gregory Chamitoff,msp
+Gregory Chamitoff,guitar,USA,63.0,Gregory Chamitoff,msp
+Gregory Chamitoff,chess,USA,63.0,Gregory Chamitoff,msp
+James Newman,atomic and molecular physics,American,68.0,James Newman,msp
+James Newman,atomic and molecular physics,American,68.0,James Newman,msp
+James Newman,atomic and molecular physics,American,68.0,James Newman,msp
+James Newman,atomic and molecular physics,American,68.0,James Newman,msp
+James Bagian,Mountain rescue,American,73.0,James Bagian,msp
+James Bagian,Snow-and-ice rescue techniques,American,73.0,James Bagian,msp
+James Bagian,Flying,American,73.0,James Bagian,msp
+James Bagian,Mountain rescue,American,73.0,James Bagian,msp
+James Bagian,Snow-and-ice rescue techniques,American,73.0,James Bagian,msp
+James Bagian,Flying,American,73.0,James Bagian,msp
+James Voss,science fiction with an emphasis on spaceflight,United States,76.0,James Voss,msp
+James Voss,wrestling,United States,76.0,James Voss,msp
+James Voss,track and field,United States,76.0,James Voss,msp
+James Voss,football,United States,76.0,James Voss,msp
+James Voss,science fiction with an emphasis on spaceflight,United States,76.0,James Voss,msp
+James Voss,wrestling,United States,76.0,James Voss,msp
+James Voss,track and field,United States,76.0,James Voss,msp
+James Voss,football,United States,76.0,James Voss,msp
+James Voss,science fiction with an emphasis on spaceflight,United States,76.0,James Voss,msp
+James Voss,wrestling,United States,76.0,James Voss,msp
+James Voss,track and field,United States,76.0,James Voss,msp
+James Voss,football,United States,76.0,James Voss,msp
+James Voss,science fiction with an emphasis on spaceflight,United States,76.0,James Voss,msp
+James Voss,wrestling,United States,76.0,James Voss,msp
+James Voss,track and field,United States,76.0,James Voss,msp
+James Voss,football,United States,76.0,James Voss,msp
+James Voss,science fiction with an emphasis on spaceflight,United States,76.0,James Voss,msp
+James Voss,wrestling,United States,76.0,James Voss,msp
+James Voss,track and field,United States,76.0,James Voss,msp
+James Voss,football,United States,76.0,James Voss,msp
+John Fabian,politics,U.S.,86.0,John Fabian,msp
+John Fabian,environmental advocacy,U.S.,86.0,John Fabian,msp
+John Fabian,politics,U.S.,86.0,John Fabian,msp
+John Fabian,environmental advocacy,U.S.,86.0,John Fabian,msp
+John Grunsfeld,mountaineering,American,66.0,John Grunsfeld,msp
+John Grunsfeld,flying,American,66.0,John Grunsfeld,msp
+John Grunsfeld,sailing,American,66.0,John Grunsfeld,msp
+John Grunsfeld,bicycling,American,66.0,John Grunsfeld,msp
+John Grunsfeld,music,American,66.0,John Grunsfeld,msp
+John Grunsfeld,mountaineering,American,66.0,John Grunsfeld,msp
+John Grunsfeld,flying,American,66.0,John Grunsfeld,msp
+John Grunsfeld,sailing,American,66.0,John Grunsfeld,msp
+John Grunsfeld,bicycling,American,66.0,John Grunsfeld,msp
+John Grunsfeld,music,American,66.0,John Grunsfeld,msp
+John Grunsfeld,mountaineering,American,66.0,John Grunsfeld,msp
+John Grunsfeld,flying,American,66.0,John Grunsfeld,msp
+John Grunsfeld,sailing,American,66.0,John Grunsfeld,msp
+John Grunsfeld,bicycling,American,66.0,John Grunsfeld,msp
+John Grunsfeld,music,American,66.0,John Grunsfeld,msp
+John Grunsfeld,mountaineering,American,66.0,John Grunsfeld,msp
+John Grunsfeld,flying,American,66.0,John Grunsfeld,msp
+John Grunsfeld,sailing,American,66.0,John Grunsfeld,msp
+John Grunsfeld,bicycling,American,66.0,John Grunsfeld,msp
+John Grunsfeld,music,American,66.0,John Grunsfeld,msp
+John Grunsfeld,mountaineering,American,66.0,John Grunsfeld,msp
+John Grunsfeld,flying,American,66.0,John Grunsfeld,msp
+John Grunsfeld,sailing,American,66.0,John Grunsfeld,msp
+John Grunsfeld,bicycling,American,66.0,John Grunsfeld,msp
+John Grunsfeld,music,American,66.0,John Grunsfeld,msp
+Joseph Acaba,"reading, especially science fiction",American,58.0,Joseph Acaba,msp
+Joseph Acaba,scuba diving,American,58.0,Joseph Acaba,msp
+Joseph Acaba,"reading, especially science fiction",American,58.0,Joseph Acaba,flight engineer
+Joseph Acaba,scuba diving,American,58.0,Joseph Acaba,flight engineer
+Joseph Acaba,"reading, especially science fiction",American,58.0,Joseph Acaba,flight engineer
+Joseph Acaba,scuba diving,American,58.0,Joseph Acaba,flight engineer
+Joseph Kerwin,reading,American,93.0,Joseph Kerwin,msp
+Joseph Kerwin,golf,American,93.0,Joseph Kerwin,msp
+Joseph Kerwin,classical music,American,93.0,Joseph Kerwin,msp
+Joseph Tanner,swimming,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,camping,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,mountaineering,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,spending time with his family,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,swimming,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,camping,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,mountaineering,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,spending time with his family,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,swimming,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,camping,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,mountaineering,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,spending time with his family,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,swimming,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,camping,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,mountaineering,United States,75.0,Joseph Tanner,msp
+Joseph Tanner,spending time with his family,United States,75.0,Joseph Tanner,msp
+Julie Payette,Playing the piano,Canada,61.0,Julie Payette,msp
+Julie Payette,Singing with orchestras and choirs,Canada,61.0,Julie Payette,msp
+Julie Payette,Running,Canada,61.0,Julie Payette,msp
+Julie Payette,Skiing,Canada,61.0,Julie Payette,msp
+Julie Payette,Racquet sports,Canada,61.0,Julie Payette,msp
+Julie Payette,Scuba diving,Canada,61.0,Julie Payette,msp
+Julie Payette,Playing the piano,Canada,61.0,Julie Payette,msp
+Julie Payette,Singing with orchestras and choirs,Canada,61.0,Julie Payette,msp
+Julie Payette,Running,Canada,61.0,Julie Payette,msp
+Julie Payette,Skiing,Canada,61.0,Julie Payette,msp
+Julie Payette,Racquet sports,Canada,61.0,Julie Payette,msp
+Julie Payette,Scuba diving,Canada,61.0,Julie Payette,msp
+Kalpana Chawla,Aerospace engineering,United States,40.0,Kalpana Chawla,msp
+Kalpana Chawla,Flying,United States,40.0,Kalpana Chawla,msp
+Kalpana Chawla,Bharatanatyam,United States,40.0,Kalpana Chawla,msp
+Kalpana Chawla,Aerospace engineering,United States,40.0,Kalpana Chawla,msp
+Kalpana Chawla,Flying,United States,40.0,Kalpana Chawla,msp
+Kalpana Chawla,Bharatanatyam,United States,40.0,Kalpana Chawla,msp
+Kathryn Thornton,skiing,American,73.0,Kathryn Thornton,msp
+Kathryn Thornton,scuba diving,American,73.0,Kathryn Thornton,msp
+Kathryn Thornton,skiing,American,73.0,Kathryn Thornton,msp
+Kathryn Thornton,scuba diving,American,73.0,Kathryn Thornton,msp
+Kathryn Thornton,skiing,American,73.0,Kathryn Thornton,msp
+Kathryn Thornton,scuba diving,American,73.0,Kathryn Thornton,msp
+Kathryn Thornton,skiing,American,73.0,Kathryn Thornton,msp
+Kathryn Thornton,scuba diving,American,73.0,Kathryn Thornton,msp
+Kenneth Cameron,flying,United States,75.0,Kenneth Cameron,pilot
+Kenneth Cameron,athletics,United States,75.0,Kenneth Cameron,pilot
+Kenneth Cameron,woodworking,United States,75.0,Kenneth Cameron,pilot
+Kenneth Cameron,reading,United States,75.0,Kenneth Cameron,pilot
+Kenneth Cameron,shooting,United States,75.0,Kenneth Cameron,pilot
+Kenneth Cameron,motorcycle riding,United States,75.0,Kenneth Cameron,pilot
+Kenneth Cameron,amateur radio,United States,75.0,Kenneth Cameron,pilot
+Kenneth Cameron,flying,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,athletics,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,woodworking,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,reading,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,shooting,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,motorcycle riding,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,amateur radio,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,flying,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,athletics,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,woodworking,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,reading,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,shooting,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,motorcycle riding,United States,75.0,Kenneth Cameron,commander
+Kenneth Cameron,amateur radio,United States,75.0,Kenneth Cameron,commander
+Kevin Ford,riding the Minardi F1 two-seater race car,United States,65.0,Kevin Ford,pilot
+Kevin Ford,riding the Minardi F1 two-seater race car,United States,65.0,Kevin Ford,commander
+Kevin Chilton,reading,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,all sports,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,running,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,snow skiing,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,sailing,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,softball,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,reading,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,all sports,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,running,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,snow skiing,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,sailing,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,softball,United States,70.0,Kevin Chilton,pilot
+Kevin Chilton,reading,United States,70.0,Kevin Chilton,commander
+Kevin Chilton,all sports,United States,70.0,Kevin Chilton,commander
+Kevin Chilton,running,United States,70.0,Kevin Chilton,commander
+Kevin Chilton,snow skiing,United States,70.0,Kevin Chilton,commander
+Kevin Chilton,sailing,United States,70.0,Kevin Chilton,commander
+Kevin Chilton,softball,United States,70.0,Kevin Chilton,commander
+Lee Morin,math,United States,73.0,Lee Morin,msp
+Lee Morin,jogging,United States,73.0,Lee Morin,msp
+Leland Melvin,photography,American,61.0,Leland Melvin,msp
+Leland Melvin,piano,American,61.0,Leland Melvin,msp
+Leland Melvin,reading,American,61.0,Leland Melvin,msp
+Leland Melvin,music,American,61.0,Leland Melvin,msp
+Leland Melvin,cycling,American,61.0,Leland Melvin,msp
+Leland Melvin,tennis,American,61.0,Leland Melvin,msp
+Leland Melvin,snowboarding,American,61.0,Leland Melvin,msp
+Leland Melvin,cooking,American,61.0,Leland Melvin,msp
+Leland Melvin,walking his two dogs,American,61.0,Leland Melvin,msp
+Leland Melvin,photography,American,61.0,Leland Melvin,msp
+Leland Melvin,piano,American,61.0,Leland Melvin,msp
+Leland Melvin,reading,American,61.0,Leland Melvin,msp
+Leland Melvin,music,American,61.0,Leland Melvin,msp
+Leland Melvin,cycling,American,61.0,Leland Melvin,msp
+Leland Melvin,tennis,American,61.0,Leland Melvin,msp
+Leland Melvin,snowboarding,American,61.0,Leland Melvin,msp
+Leland Melvin,cooking,American,61.0,Leland Melvin,msp
+Leland Melvin,walking his two dogs,American,61.0,Leland Melvin,msp
+Leroy Chiao,flying,United States,65.0,Leroy Chiao,msp
+Leroy Chiao,downhill skiing,United States,65.0,Leroy Chiao,msp
+Leroy Chiao,flying,United States,65.0,Leroy Chiao,msp
+Leroy Chiao,downhill skiing,United States,65.0,Leroy Chiao,msp
+Leroy Chiao,flying,United States,65.0,Leroy Chiao,msp
+Leroy Chiao,downhill skiing,United States,65.0,Leroy Chiao,msp
+Leroy Chiao,flying,United States,65.0,Leroy Chiao,commander
+Leroy Chiao,downhill skiing,United States,65.0,Leroy Chiao,commander
+Lisa Nowak,Girl Scout,United States,62.0,Lisa Nowak,msp
+Lisa Nowak,Société Honoraire de Français,United States,62.0,Lisa Nowak,msp
+Lisa Nowak,math team,United States,62.0,Lisa Nowak,msp
+Lisa Nowak,student council,United States,62.0,Lisa Nowak,msp
+Lisa Nowak,field hockey,United States,62.0,Lisa Nowak,msp
+Lisa Nowak,track and field athletics,United States,62.0,Lisa Nowak,msp
+Luca Parmitano,scuba diving,Italy,48.0,Luca Parmitano,flight engineer
+Luca Parmitano,snowboarding,Italy,48.0,Luca Parmitano,flight engineer
+Luca Parmitano,skydiving,Italy,48.0,Luca Parmitano,flight engineer
+Luca Parmitano,weight training,Italy,48.0,Luca Parmitano,flight engineer
+Luca Parmitano,swimming,Italy,48.0,Luca Parmitano,flight engineer
+Luca Parmitano,reading,Italy,48.0,Luca Parmitano,flight engineer
+Luca Parmitano,listening to and playing music,Italy,48.0,Luca Parmitano,flight engineer
+Maksim Surayev,sports,Russia,53.0,Maksim Surayev,commander
+Maksim Surayev,reading,Russia,53.0,Maksim Surayev,commander
+Maksim Surayev,sports,Russia,53.0,Maksim Surayev,commander
+Maksim Surayev,reading,Russia,53.0,Maksim Surayev,commander
+Michael Barratt,family and church activities,American,66.0,Michael Barratt,flight engineer
+Michael Barratt,writing,American,66.0,Michael Barratt,flight engineer
+Michael Barratt,sailing,American,66.0,Michael Barratt,flight engineer
+Michael Barratt,boat restoration and maintenance,American,66.0,Michael Barratt,flight engineer
+Michael Barratt,family and church activities,American,66.0,Michael Barratt,msp
+Michael Barratt,writing,American,66.0,Michael Barratt,msp
+Michael Barratt,sailing,American,66.0,Michael Barratt,msp
+Michael Barratt,boat restoration and maintenance,American,66.0,Michael Barratt,msp
+Michael Fossum,Boy Scouts of America,United States,67.0,Michael Fossum,msp
+Michael Fossum,Order of the Arrow,United States,67.0,Michael Fossum,msp
+Michael Fossum,Scoutmaster,United States,67.0,Michael Fossum,msp
+Michael Fossum,Boy Scouts of America,United States,67.0,Michael Fossum,msp
+Michael Fossum,Order of the Arrow,United States,67.0,Michael Fossum,msp
+Michael Fossum,Scoutmaster,United States,67.0,Michael Fossum,msp
+Michael Fossum,Boy Scouts of America,United States,67.0,Michael Fossum,commander
+Michael Fossum,Order of the Arrow,United States,67.0,Michael Fossum,commander
+Michael Fossum,Scoutmaster,United States,67.0,Michael Fossum,commander
+Michael Fincke,Conversant in Japanese and Russian,American,58.0,Michael Fincke,flight engineer
+Michael Fincke,Conversant in Japanese and Russian,American,58.0,Michael Fincke,commander
+Michael Fincke,Conversant in Japanese and Russian,American,58.0,Michael Fincke,msp
+Michael Foale,windsurfing,British American,68.0,Michael Foale,msp
+Michael Foale,gliding,British American,68.0,Michael Foale,msp
+Michael Foale,cross-country skiing,British American,68.0,Michael Foale,msp
+Michael Foale,windsurfing,British American,68.0,Michael Foale,msp
+Michael Foale,gliding,British American,68.0,Michael Foale,msp
+Michael Foale,cross-country skiing,British American,68.0,Michael Foale,msp
+Michael Foale,windsurfing,British American,68.0,Michael Foale,msp
+Michael Foale,gliding,British American,68.0,Michael Foale,msp
+Michael Foale,cross-country skiing,British American,68.0,Michael Foale,msp
+Michael Foale,windsurfing,British American,68.0,Michael Foale,msp
+Michael Foale,gliding,British American,68.0,Michael Foale,msp
+Michael Foale,cross-country skiing,British American,68.0,Michael Foale,msp
+Michael Foale,windsurfing,British American,68.0,Michael Foale,msp
+Michael Foale,gliding,British American,68.0,Michael Foale,msp
+Michael Foale,cross-country skiing,British American,68.0,Michael Foale,msp
+Michael Foale,windsurfing,British American,68.0,Michael Foale,commander
+Michael Foale,gliding,British American,68.0,Michael Foale,commander
+Michael Foale,cross-country skiing,British American,68.0,Michael Foale,commander
+Michael Gernhardt,running,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,swimming,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,flying,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,fishing,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,scuba diving,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,running,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,swimming,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,flying,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,fishing,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,scuba diving,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,running,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,swimming,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,flying,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,fishing,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,scuba diving,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,running,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,swimming,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,flying,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,fishing,U.S.,69.0,Michael Gernhardt,msp
+Michael Gernhardt,scuba diving,U.S.,69.0,Michael Gernhardt,msp
+Mikhail Tyurin,sailing,Russia,65.0,Mikhail Tyurin,flight engineer
+Mikhail Tyurin,sailing,Russia,65.0,Mikhail Tyurin,flight engineer
+Mikhail Tyurin,sailing,Russia,65.0,Mikhail Tyurin,commander
+Naoko Yamazaki,scuba diving,Japanese,54.0,Naoko Yamazaki,msp
+Naoko Yamazaki,snow skiing,Japanese,54.0,Naoko Yamazaki,msp
+Naoko Yamazaki,flying,Japanese,54.0,Naoko Yamazaki,msp
+Naoko Yamazaki,music,Japanese,54.0,Naoko Yamazaki,msp
+Nicole Stott,astronomy,American,62.0,Nicole Stott,flight engineer
+Nicole Stott,astronomy,American,62.0,Nicole Stott,msp
+Nikolai Budarin,fishing,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,skiing,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,picking mushrooms,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,tourism,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,cycling,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,fishing,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,skiing,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,picking mushrooms,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,tourism,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,cycling,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,fishing,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,skiing,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,picking mushrooms,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,tourism,Russia,72.0,Nikolai Budarin,flight engineer
+Nikolai Budarin,cycling,Russia,72.0,Nikolai Budarin,flight engineer
+Norishige Kanai,Iaidō and other Japanese traditional martial arts,Japanese,48.0,Norishige Kanai,flight engineer
+Norishige Kanai,scuba diving,Japanese,48.0,Norishige Kanai,flight engineer
+Norishige Kanai,traveling,Japanese,48.0,Norishige Kanai,flight engineer
+Norman Thagard,classical music,United States,82.0,Norman Thagard,msp
+Norman Thagard,electronic design,United States,82.0,Norman Thagard,msp
+Norman Thagard,classical music,United States,82.0,Norman Thagard,msp
+Norman Thagard,electronic design,United States,82.0,Norman Thagard,msp
+Norman Thagard,classical music,United States,82.0,Norman Thagard,msp
+Norman Thagard,electronic design,United States,82.0,Norman Thagard,msp
+Norman Thagard,classical music,United States,82.0,Norman Thagard,msp
+Norman Thagard,electronic design,United States,82.0,Norman Thagard,msp
+Norman Thagard,classical music,United States,82.0,Norman Thagard,msp
+Norman Thagard,electronic design,United States,82.0,Norman Thagard,msp
+Oleg Kononenko,reading,Russian,61.0,Oleg Kononenko,flight engineer
+Oleg Kononenko,team sports,Russian,61.0,Oleg Kononenko,flight engineer
+Oleg Kononenko,reading,Russian,61.0,Oleg Kononenko,commander
+Oleg Kononenko,team sports,Russian,61.0,Oleg Kononenko,commander
+Oleg Kononenko,reading,Russian,61.0,Oleg Kononenko,commander
+Oleg Kononenko,team sports,Russian,61.0,Oleg Kononenko,commander
+Oleg Kononenko,reading,Russian,61.0,Oleg Kononenko,commander
+Oleg Kononenko,team sports,Russian,61.0,Oleg Kononenko,commander
+Oleg Kotov,diving,Russian,59.0,Oleg Kotov,commander
+Oleg Kotov,computers,Russian,59.0,Oleg Kotov,commander
+Oleg Kotov,photography,Russian,59.0,Oleg Kotov,commander
+Oleg Kotov,diving,Russian,59.0,Oleg Kotov,commander
+Oleg Kotov,computers,Russian,59.0,Oleg Kotov,commander
+Oleg Kotov,photography,Russian,59.0,Oleg Kotov,commander
+Oleg Kotov,diving,Russian,59.0,Oleg Kotov,commander
+Oleg Kotov,computers,Russian,59.0,Oleg Kotov,commander
+Oleg Kotov,photography,Russian,59.0,Oleg Kotov,commander
+Paolo Nespoli,Scuba diving,Italian,68.0,Paolo Nespoli,msp
+Paolo Nespoli,piloting aircraft,Italian,68.0,Paolo Nespoli,msp
+Paolo Nespoli,photography,Italian,68.0,Paolo Nespoli,msp
+Paolo Nespoli,building electronic equipment and computer software,Italian,68.0,Paolo Nespoli,msp
+Paolo Nespoli,supports Serie A team Inter,Italian,68.0,Paolo Nespoli,msp
+Paolo Nespoli,Scuba diving,Italian,68.0,Paolo Nespoli,flight engineer
+Paolo Nespoli,piloting aircraft,Italian,68.0,Paolo Nespoli,flight engineer
+Paolo Nespoli,photography,Italian,68.0,Paolo Nespoli,flight engineer
+Paolo Nespoli,building electronic equipment and computer software,Italian,68.0,Paolo Nespoli,flight engineer
+Paolo Nespoli,supports Serie A team Inter,Italian,68.0,Paolo Nespoli,flight engineer
+Paolo Nespoli,Scuba diving,Italian,68.0,Paolo Nespoli,flight engineer
+Paolo Nespoli,piloting aircraft,Italian,68.0,Paolo Nespoli,flight engineer
+Paolo Nespoli,photography,Italian,68.0,Paolo Nespoli,flight engineer
+Paolo Nespoli,building electronic equipment and computer software,Italian,68.0,Paolo Nespoli,flight engineer
+Paolo Nespoli,supports Serie A team Inter,Italian,68.0,Paolo Nespoli,flight engineer
+Patrick Baudry,"mechanical sports, such as motorcycling and car racing",France,79.0,Patrick Baudry,psp
+Patrick Baudry,running marathons,France,79.0,Patrick Baudry,psp
+Patrick Baudry,playing squash,France,79.0,Patrick Baudry,psp
+Patrick Baudry,skiing,France,79.0,Patrick Baudry,psp
+Patrick Baudry,shooting,France,79.0,Patrick Baudry,psp
+Patrick Baudry,windsurfing,France,79.0,Patrick Baudry,psp
+Patrick Baudry,sky diving,France,79.0,Patrick Baudry,psp
+Patrick Baudry,wine connaisseur,France,79.0,Patrick Baudry,psp
+Pavel Vinogradov,game sports,Russian,72.0,Pavel Vinogradov,flight engineer
+Pavel Vinogradov,history of aviation and cosmonautics,Russian,72.0,Pavel Vinogradov,flight engineer
+Pavel Vinogradov,astronomy,Russian,72.0,Pavel Vinogradov,flight engineer
+Pavel Vinogradov,game sports,Russian,72.0,Pavel Vinogradov,commander
+Pavel Vinogradov,history of aviation and cosmonautics,Russian,72.0,Pavel Vinogradov,commander
+Pavel Vinogradov,astronomy,Russian,72.0,Pavel Vinogradov,commander
+Pavel Vinogradov,game sports,Russian,72.0,Pavel Vinogradov,commander
+Pavel Vinogradov,history of aviation and cosmonautics,Russian,72.0,Pavel Vinogradov,commander
+Pavel Vinogradov,astronomy,Russian,72.0,Pavel Vinogradov,commander
+Pierre Thuot,boating,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,golf,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,running,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,music,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,flying,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,family activities,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,boating,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,golf,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,running,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,music,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,flying,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,family activities,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,boating,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,golf,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,running,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,music,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,flying,United States,70.0,Pierre Thuot,msp
+Pierre Thuot,family activities,United States,70.0,Pierre Thuot,msp
+Rex Walheim,snow skiing,United States,62.0,Rex Walheim,msp
+Rex Walheim,hiking,United States,62.0,Rex Walheim,msp
+Rex Walheim,softball,United States,62.0,Rex Walheim,msp
+Rex Walheim,football,United States,62.0,Rex Walheim,msp
+Rex Walheim,snow skiing,United States,62.0,Rex Walheim,msp
+Rex Walheim,hiking,United States,62.0,Rex Walheim,msp
+Rex Walheim,softball,United States,62.0,Rex Walheim,msp
+Rex Walheim,football,United States,62.0,Rex Walheim,msp
+Rex Walheim,snow skiing,United States,62.0,Rex Walheim,msp
+Rex Walheim,hiking,United States,62.0,Rex Walheim,msp
+Rex Walheim,softball,United States,62.0,Rex Walheim,msp
+Rex Walheim,football,United States,62.0,Rex Walheim,msp
+Richard Linnehan,various sports,United States,67.0,Richard Linnehan,msp
+Richard Linnehan,outdoor activities,United States,67.0,Richard Linnehan,msp
+Richard Linnehan,natural history,United States,67.0,Richard Linnehan,msp
+Richard Linnehan,various sports,United States,67.0,Richard Linnehan,msp
+Richard Linnehan,outdoor activities,United States,67.0,Richard Linnehan,msp
+Richard Linnehan,natural history,United States,67.0,Richard Linnehan,msp
+Richard Linnehan,various sports,United States,67.0,Richard Linnehan,msp
+Richard Linnehan,outdoor activities,United States,67.0,Richard Linnehan,msp
+Richard Linnehan,natural history,United States,67.0,Richard Linnehan,msp
+Richard Linnehan,various sports,United States,67.0,Richard Linnehan,msp
+Richard Linnehan,outdoor activities,United States,67.0,Richard Linnehan,msp
+Richard Linnehan,natural history,United States,67.0,Richard Linnehan,msp
+Robert Gibson,home-built aircraft,American,78.0,Robert Gibson,pilot
+Robert Gibson,Formula One Air Racing,American,78.0,Robert Gibson,pilot
+Robert Gibson,Unlimited Class Air Racing,American,78.0,Robert Gibson,pilot
+Robert Gibson,running,American,78.0,Robert Gibson,pilot
+Robert Gibson,surfing,American,78.0,Robert Gibson,pilot
+Robert Gibson,home-built aircraft,American,78.0,Robert Gibson,commander
+Robert Gibson,Formula One Air Racing,American,78.0,Robert Gibson,commander
+Robert Gibson,Unlimited Class Air Racing,American,78.0,Robert Gibson,commander
+Robert Gibson,running,American,78.0,Robert Gibson,commander
+Robert Gibson,surfing,American,78.0,Robert Gibson,commander
+Robert Gibson,home-built aircraft,American,78.0,Robert Gibson,commander
+Robert Gibson,Formula One Air Racing,American,78.0,Robert Gibson,commander
+Robert Gibson,Unlimited Class Air Racing,American,78.0,Robert Gibson,commander
+Robert Gibson,running,American,78.0,Robert Gibson,commander
+Robert Gibson,surfing,American,78.0,Robert Gibson,commander
+Robert Gibson,home-built aircraft,American,78.0,Robert Gibson,commander
+Robert Gibson,Formula One Air Racing,American,78.0,Robert Gibson,commander
+Robert Gibson,Unlimited Class Air Racing,American,78.0,Robert Gibson,commander
+Robert Gibson,running,American,78.0,Robert Gibson,commander
+Robert Gibson,surfing,American,78.0,Robert Gibson,commander
+Robert Gibson,home-built aircraft,American,78.0,Robert Gibson,commander
+Robert Gibson,Formula One Air Racing,American,78.0,Robert Gibson,commander
+Robert Gibson,Unlimited Class Air Racing,American,78.0,Robert Gibson,commander
+Robert Gibson,running,American,78.0,Robert Gibson,commander
+Robert Gibson,surfing,American,78.0,Robert Gibson,commander
+Robert Stewart,woodworking,United States,83.0,Robert Stewart,msp
+Robert Stewart,photography,United States,83.0,Robert Stewart,msp
+Robert Stewart,skiing,United States,83.0,Robert Stewart,msp
+Robert Stewart,woodworking,United States,83.0,Robert Stewart,msp
+Robert Stewart,photography,United States,83.0,Robert Stewart,msp
+Robert Stewart,skiing,United States,83.0,Robert Stewart,msp
+Robert Satcher,running,American,59.0,Robert Satcher,msp
+Robert Satcher,scuba diving,American,59.0,Robert Satcher,msp
+Robert Satcher,reading,American,59.0,Robert Satcher,msp
+Roman Romanenko,underwater hunting,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,tennis,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,car repairs,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,tourism,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,yachting,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,volleyball,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,music,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,underwater hunting,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,tennis,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,car repairs,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,tourism,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,yachting,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,volleyball,Russian,54.0,Roman Romanenko,flight engineer
+Roman Romanenko,music,Russian,54.0,Roman Romanenko,flight engineer
+Ronald Anthony Parise,astronomy,American,56.0,Ronald Anthony Parise,psp
+Ronald Anthony Parise,aviation,American,56.0,Ronald Anthony Parise,psp
+Ronald Anthony Parise,astronomy,American,56.0,Ronald Anthony Parise,psp
+Ronald Anthony Parise,aviation,American,56.0,Ronald Anthony Parise,psp
+Ronald Grabe,skiing,United States,80.0,Ronald Grabe,pilot
+Ronald Grabe,wind surfing,United States,80.0,Ronald Grabe,pilot
+Ronald Grabe,racquet sports,United States,80.0,Ronald Grabe,pilot
+Ronald Grabe,skiing,United States,80.0,Ronald Grabe,pilot
+Ronald Grabe,wind surfing,United States,80.0,Ronald Grabe,pilot
+Ronald Grabe,racquet sports,United States,80.0,Ronald Grabe,pilot
+Ronald Grabe,skiing,United States,80.0,Ronald Grabe,commander
+Ronald Grabe,wind surfing,United States,80.0,Ronald Grabe,commander
+Ronald Grabe,racquet sports,United States,80.0,Ronald Grabe,commander
+Ronald Grabe,skiing,United States,80.0,Ronald Grabe,commander
+Ronald Grabe,wind surfing,United States,80.0,Ronald Grabe,commander
+Ronald Grabe,racquet sports,United States,80.0,Ronald Grabe,commander
+Ronald McNair,saxophonist,U.S.,35.0,Ronald McNair,msp
+Ronald McNair,jazz enthusiast,U.S.,35.0,Ronald McNair,msp
+Ronald McNair,saxophonist,U.S.,35.0,Ronald McNair,msp
+Ronald McNair,jazz enthusiast,U.S.,35.0,Ronald McNair,msp
+David Griggs,flying,United States,49.0,David Griggs,msp
+David Griggs,auto restoration,United States,49.0,David Griggs,msp
+David Griggs,running,United States,49.0,David Griggs,msp
+David Griggs,skiing,United States,49.0,David Griggs,msp
+David Griggs,diving,United States,49.0,David Griggs,msp
+Salizhan Sharipov,football,Uzbek,61.0,Salizhan Sharipov,flight engineer
+Salizhan Sharipov,reading,Uzbek,61.0,Salizhan Sharipov,flight engineer
+Salizhan Sharipov,football,Uzbek,61.0,Salizhan Sharipov,commander
+Salizhan Sharipov,reading,Uzbek,61.0,Salizhan Sharipov,commander
+Satoshi Furukawa,baseball,Japan,61.0,Satoshi Furukawa,flight engineer
+Satoshi Furukawa,bowling,Japan,61.0,Satoshi Furukawa,flight engineer
+Satoshi Furukawa,music,Japan,61.0,Satoshi Furukawa,flight engineer
+Satoshi Furukawa,traveling,Japan,61.0,Satoshi Furukawa,flight engineer
+Scott Tingle,guitar lessons,U.S.,60.0,Scott Tingle,flight engineer
+Scott Tingle,writing original music,U.S.,60.0,Scott Tingle,flight engineer
+Scott Tingle,playing at clubs,U.S.,60.0,Scott Tingle,flight engineer
+Scott Parazynski,mountaineering,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,rock climbing,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,flying,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,scuba diving,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,mountaineering,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,rock climbing,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,flying,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,scuba diving,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,mountaineering,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,rock climbing,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,flying,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,scuba diving,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,mountaineering,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,rock climbing,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,flying,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,scuba diving,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,mountaineering,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,rock climbing,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,flying,United States,64.0,Scott Parazynski,msp
+Scott Parazynski,scuba diving,United States,64.0,Scott Parazynski,msp
+Scott Horowitz,human exploration of Mars,United States,68.0,Scott Horowitz,pilot
+Scott Horowitz,human exploration of Mars,United States,68.0,Scott Horowitz,pilot
+Scott Horowitz,human exploration of Mars,United States,68.0,Scott Horowitz,pilot
+Scott Horowitz,human exploration of Mars,United States,68.0,Scott Horowitz,commander
+Sergei Krikalev,swimming,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,skiing,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,cycling,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,aerobatic flying,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,amateur radio operations,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,swimming,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,skiing,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,cycling,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,aerobatic flying,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,amateur radio operations,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,swimming,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,skiing,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,cycling,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,aerobatic flying,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,amateur radio operations,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,swimming,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,skiing,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,cycling,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,aerobatic flying,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,amateur radio operations,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,swimming,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,skiing,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,cycling,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,aerobatic flying,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,amateur radio operations,Russia,67.0,Sergei Krikalev,flight engineer
+Sergei Krikalev,swimming,Russia,67.0,Sergei Krikalev,commander
+Sergei Krikalev,skiing,Russia,67.0,Sergei Krikalev,commander
+Sergei Krikalev,cycling,Russia,67.0,Sergei Krikalev,commander
+Sergei Krikalev,aerobatic flying,Russia,67.0,Sergei Krikalev,commander
+Sergei Krikalev,amateur radio operations,Russia,67.0,Sergei Krikalev,commander
+Shannon Lucid,reading books,American,82.0,Shannon Lucid,msp
+Shannon Lucid,exploration,American,82.0,Shannon Lucid,msp
+Shannon Lucid,astronomy,American,82.0,Shannon Lucid,msp
+Shannon Lucid,reading books,American,82.0,Shannon Lucid,msp
+Shannon Lucid,exploration,American,82.0,Shannon Lucid,msp
+Shannon Lucid,astronomy,American,82.0,Shannon Lucid,msp
+Shannon Lucid,reading books,American,82.0,Shannon Lucid,msp
+Shannon Lucid,exploration,American,82.0,Shannon Lucid,msp
+Shannon Lucid,astronomy,American,82.0,Shannon Lucid,msp
+Shannon Lucid,reading books,American,82.0,Shannon Lucid,msp
+Shannon Lucid,exploration,American,82.0,Shannon Lucid,msp
+Shannon Lucid,astronomy,American,82.0,Shannon Lucid,msp
+Shannon Lucid,reading books,American,82.0,Shannon Lucid,msp
+Shannon Lucid,exploration,American,82.0,Shannon Lucid,msp
+Shannon Lucid,astronomy,American,82.0,Shannon Lucid,msp
+Shannon Walker,cooking,American,60.0,Shannon Walker,flight engineer
+Shannon Walker,soccer,American,60.0,Shannon Walker,flight engineer
+Shannon Walker,running,American,60.0,Shannon Walker,flight engineer
+Shannon Walker,weight training,American,60.0,Shannon Walker,flight engineer
+Shannon Walker,flying,American,60.0,Shannon Walker,flight engineer
+Shannon Walker,camping,American,60.0,Shannon Walker,flight engineer
+Shannon Walker,travel,American,60.0,Shannon Walker,flight engineer
+Sidney Gutierrez,camping,American,74.0,Sidney Gutierrez,msp
+Sidney Gutierrez,woodworking,American,74.0,Sidney Gutierrez,msp
+Sidney Gutierrez,racquetball,American,74.0,Sidney Gutierrez,msp
+Sidney Gutierrez,camping,American,74.0,Sidney Gutierrez,commander
+Sidney Gutierrez,woodworking,American,74.0,Sidney Gutierrez,commander
+Sidney Gutierrez,racquetball,American,74.0,Sidney Gutierrez,commander
+Soichi Noguchi,jogging,Japan,60.0,Soichi Noguchi,msp
+Soichi Noguchi,basketball,Japan,60.0,Soichi Noguchi,msp
+Soichi Noguchi,skiing,Japan,60.0,Soichi Noguchi,msp
+Soichi Noguchi,camping,Japan,60.0,Soichi Noguchi,msp
+Soichi Noguchi,jogging,Japan,60.0,Soichi Noguchi,flight engineer
+Soichi Noguchi,basketball,Japan,60.0,Soichi Noguchi,flight engineer
+Soichi Noguchi,skiing,Japan,60.0,Soichi Noguchi,flight engineer
+Soichi Noguchi,camping,Japan,60.0,Soichi Noguchi,flight engineer
+Stanley Love,martial arts,American,60.0,Stanley Love,msp
+Stanley Love,hiking,American,60.0,Stanley Love,msp
+Stanley Love,science fiction,American,60.0,Stanley Love,msp
+Stanley Love,music,American,60.0,Stanley Love,msp
+Stanley Love,anime,American,60.0,Stanley Love,msp
+Steven Hawley,basketball,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,softball,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,golf,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,running,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,playing bridge,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,umpiring,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,basketball,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,softball,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,golf,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,running,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,playing bridge,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,umpiring,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,basketball,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,softball,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,golf,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,running,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,playing bridge,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,umpiring,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,basketball,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,softball,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,golf,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,running,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,playing bridge,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,umpiring,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,basketball,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,softball,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,golf,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,running,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,playing bridge,U.S.,73.0,Steven Hawley,msp
+Steven Hawley,umpiring,U.S.,73.0,Steven Hawley,msp
+Steven Nagel,sport flying,American,67.0,Steven Nagel,msp
+Steven Nagel,amateur radio operations,American,67.0,Steven Nagel,msp
+Steven Nagel,music,American,67.0,Steven Nagel,msp
+Steven Nagel,sport flying,American,67.0,Steven Nagel,pilot
+Steven Nagel,amateur radio operations,American,67.0,Steven Nagel,pilot
+Steven Nagel,music,American,67.0,Steven Nagel,pilot
+Steven Nagel,sport flying,American,67.0,Steven Nagel,commander
+Steven Nagel,amateur radio operations,American,67.0,Steven Nagel,commander
+Steven Nagel,music,American,67.0,Steven Nagel,commander
+Steven Nagel,sport flying,American,67.0,Steven Nagel,commander
+Steven Nagel,amateur radio operations,American,67.0,Steven Nagel,commander
+Steven Nagel,music,American,67.0,Steven Nagel,commander
+Steven Swanson,Browncoat (fan of Joss Whedon's Serenity and Firefly),American,64.0,Steven Swanson,msp
+Steven Swanson,Browncoat (fan of Joss Whedon's Serenity and Firefly),American,64.0,Steven Swanson,msp
+Steven Swanson,Browncoat (fan of Joss Whedon's Serenity and Firefly),American,64.0,Steven Swanson,flight engineer
+Takao Doi,amateur astronomy,Japanese,71.0,Takao Doi,msp
+Takao Doi,amateur astronomy,Japanese,71.0,Takao Doi,msp
+Takuya Onishi,flying,Japanese,49.0,Takuya Onishi,flight engineer
+Takuya Onishi,playing the saxophone,Japanese,49.0,Takuya Onishi,flight engineer
+Takuya Onishi,movies,Japanese,49.0,Takuya Onishi,flight engineer
+Takuya Onishi,hiking,Japanese,49.0,Takuya Onishi,flight engineer
+Thomas Stafford,hunting,United States,93.0,Thomas Stafford,pilot
+Thomas Stafford,weight lifting,United States,93.0,Thomas Stafford,pilot
+Thomas Stafford,gliding,United States,93.0,Thomas Stafford,pilot
+Thomas Stafford,scuba diving,United States,93.0,Thomas Stafford,pilot
+Thomas Stafford,fishing,United States,93.0,Thomas Stafford,pilot
+Thomas Stafford,swimming,United States,93.0,Thomas Stafford,pilot
+Thomas Stafford,hunting,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,weight lifting,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,gliding,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,scuba diving,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,fishing,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,swimming,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,hunting,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,weight lifting,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,gliding,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,scuba diving,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,fishing,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,swimming,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,hunting,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,weight lifting,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,gliding,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,scuba diving,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,fishing,United States,93.0,Thomas Stafford,commander
+Thomas Stafford,swimming,United States,93.0,Thomas Stafford,commander
+Timothy Nigel Peake,climbing,England,53.0,Timothy Nigel Peake,pilot
+Timothy Nigel Peake,caving,England,53.0,Timothy Nigel Peake,pilot
+Timothy Nigel Peake,cross-country running,England,53.0,Timothy Nigel Peake,pilot
+Timothy Nigel Peake,triathlon,England,53.0,Timothy Nigel Peake,pilot
+Toyohiro Akiyama,organic farming,Japan,83.0,Toyohiro Akiyama,journalist
+Toyohiro Akiyama,environmental issues,Japan,83.0,Toyohiro Akiyama,journalist
+Umberto Guidoni,popularizing science,Italian,71.0,Umberto Guidoni,msp
+Umberto Guidoni,organizes events related to space,Italian,71.0,Umberto Guidoni,msp
+Umberto Guidoni,popularizing science,Italian,71.0,Umberto Guidoni,msp
+Umberto Guidoni,organizes events related to space,Italian,71.0,Umberto Guidoni,msp
+Valentina Tereshkova,Parachuting,Russia,88.0,Valentina Tereshkova,pilot
+Valentina Tereshkova,Skydiving,Russia,88.0,Valentina Tereshkova,pilot
+Valeri Tokarev,nature,Russia,72.0,Valeri Tokarev,flight engineer
+Valeri Tokarev,automobiles,Russia,72.0,Valeri Tokarev,flight engineer
+Valeri Tokarev,airplanes,Russia,72.0,Valeri Tokarev,flight engineer
+Valeri Tokarev,sports,Russia,72.0,Valeri Tokarev,flight engineer
+Valeri Tokarev,nature,Russia,72.0,Valeri Tokarev,msp
+Valeri Tokarev,automobiles,Russia,72.0,Valeri Tokarev,msp
+Valeri Tokarev,airplanes,Russia,72.0,Valeri Tokarev,msp
+Valeri Tokarev,sports,Russia,72.0,Valeri Tokarev,msp
+Valery Korzun,tennis,Russia,72.0,Valery Korzun,commander
+Valery Korzun,badminton,Russia,72.0,Valery Korzun,commander
+Valery Korzun,theater,Russia,72.0,Valery Korzun,commander
+Valery Korzun,tennis,Russia,72.0,Valery Korzun,commander
+Valery Korzun,badminton,Russia,72.0,Valery Korzun,commander
+Valery Korzun,theater,Russia,72.0,Valery Korzun,commander
+Valery Ryumin,tennis,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,angling,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,hunting,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,walking through forests,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,travel,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,tennis,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,angling,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,hunting,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,walking through forests,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,travel,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,tennis,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,angling,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,hunting,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,walking through forests,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,travel,"Soviet , Russian",82.0,Valery Ryumin,flight engineer
+Valery Ryumin,tennis,"Soviet , Russian",82.0,Valery Ryumin,msp
+Valery Ryumin,angling,"Soviet , Russian",82.0,Valery Ryumin,msp
+Valery Ryumin,hunting,"Soviet , Russian",82.0,Valery Ryumin,msp
+Valery Ryumin,walking through forests,"Soviet , Russian",82.0,Valery Ryumin,msp
+Valery Ryumin,travel,"Soviet , Russian",82.0,Valery Ryumin,msp
+Vladimir Dzhanibekov,flying,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,photography,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,painting,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,flying,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,photography,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,painting,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,flying,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,photography,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,painting,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,flying,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,photography,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,painting,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,flying,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,photography,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Dzhanibekov,painting,Soviet,83.0,Vladimir Dzhanibekov,commander
+Vladimir Komarov,hunting,Soviet Union,40.0,Vladimir Komarov,commander
+Vladimir Komarov,cross country skiing,Soviet Union,40.0,Vladimir Komarov,commander
+Vladimir Komarov,ice hockey,Soviet Union,40.0,Vladimir Komarov,commander
+Vladimir Komarov,hunting,Soviet Union,40.0,Vladimir Komarov,commander
+Vladimir Komarov,cross country skiing,Soviet Union,40.0,Vladimir Komarov,commander
+Vladimir Komarov,ice hockey,Soviet Union,40.0,Vladimir Komarov,commander
+Winston Scott,martial arts,United States,75.0,Winston Scott,msp
+Winston Scott,music,United States,75.0,Winston Scott,msp
+Winston Scott,trumpet,United States,75.0,Winston Scott,msp
+Winston Scott,flying general aviation aircraft,United States,75.0,Winston Scott,msp
+Winston Scott,electronics hobbyist,United States,75.0,Winston Scott,msp
+Winston Scott,martial arts,United States,75.0,Winston Scott,msp
+Winston Scott,music,United States,75.0,Winston Scott,msp
+Winston Scott,trumpet,United States,75.0,Winston Scott,msp
+Winston Scott,flying general aviation aircraft,United States,75.0,Winston Scott,msp
+Winston Scott,electronics hobbyist,United States,75.0,Winston Scott,msp
+Yelena Serova,flying,Russia,49.0,Yelena Serova,flight engineer
+Yelena Serova,economics,Russia,49.0,Yelena Serova,flight engineer
+Yuri Gidzenko,football,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,swimming,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,reading of literature,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,photography,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,walks in forests,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,football,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,swimming,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,reading of literature,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,photography,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,walks in forests,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,football,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,swimming,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,reading of literature,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,photography,Russian,63.0,Yuri Gidzenko,commander
+Yuri Gidzenko,walks in forests,Russian,63.0,Yuri Gidzenko,commander
+Yuri Romanenko,underwater fishing,Soviet/Russian,81.0,Yuri Romanenko,commander
+Yuri Romanenko,aquatic activities,Soviet/Russian,81.0,Yuri Romanenko,commander
+Yuri Romanenko,composing and singing songs,Soviet/Russian,81.0,Yuri Romanenko,commander
+Yuri Romanenko,underwater fishing,Soviet/Russian,81.0,Yuri Romanenko,commander
+Yuri Romanenko,aquatic activities,Soviet/Russian,81.0,Yuri Romanenko,commander
+Yuri Romanenko,composing and singing songs,Soviet/Russian,81.0,Yuri Romanenko,commander
+Yuri Romanenko,underwater fishing,Soviet/Russian,81.0,Yuri Romanenko,commander
+Yuri Romanenko,aquatic activities,Soviet/Russian,81.0,Yuri Romanenko,commander
+Yuri Romanenko,composing and singing songs,Soviet/Russian,81.0,Yuri Romanenko,commander

@@ -41,85 +41,128 @@ from typing import Dict, List, Any
 
 # Helper functions (copied from models_test)
 def phrase_token(s: str) -> str:
-	return "_".join(s.strip().lower().split())
+        return "_".join(s.strip().lower().split())
 
 def extract_category_tokens(rec: Dict) -> Dict[str, List[str]]:
-	edu_tokens = []
-	for e in rec.get("education", []) or []:
-		inst = e.get("institution")
-		if inst:
-			edu_tokens.append(phrase_token(inst))
-	occ_tokens = [phrase_token(o) for o in (rec.get("occupations") or []) if isinstance(o, str) and o.strip()]
-	int_tokens = [phrase_token(i) for i in (rec.get("interests") or []) if isinstance(i, str) and i.strip()]
-	nat = rec.get("nationality")
-	nat_tokens = [phrase_token(nat)] if isinstance(nat, str) and nat.strip() else []
-	return {
-		"education": edu_tokens,
-		"occupation": occ_tokens,
-		"interest": int_tokens,
-		"nationality": nat_tokens,
-	}
+        edu_tokens = []
+        for e in rec.get("education", []) or []:
+                inst = e.get("institution")
+                if inst:
+                        edu_tokens.append(phrase_token(inst))
+        occ_tokens = [phrase_token(o) for o in (rec.get("occupations") or []) if isinstance(o, str) and o.strip()]
+        int_tokens = [phrase_token(i) for i in (rec.get("interests") or []) if isinstance(i, str) and i.strip()]
+        nat = rec.get("nationality")
+        nat_tokens = [phrase_token(nat)] if isinstance(nat, str) and nat.strip() else []
+        return {
+                "education": edu_tokens,
+                "occupation": occ_tokens,
+                "interest": int_tokens,
+                "nationality": nat_tokens,
+        }
 
 def mean_vector(model: Word2Vec, tokens: List[str]) -> np.ndarray:
-	vecs = [model.wv[t] for t in tokens if t in model.wv]
-	if not vecs:
-		return np.zeros(model.vector_size, dtype=np.float32)
-	return np.mean(vecs, axis=0)
+        vecs = [model.wv[t] for t in tokens if t in model.wv]
+        if not vecs:
+                return np.zeros(model.vector_size, dtype=np.float32)
+        return np.mean(vecs, axis=0)
 
 def embed_person(model: Word2Vec, rec: Dict, cat_weights=None) -> np.ndarray:
-	if cat_weights is None:
-		cat_weights = {"education":1.0, "occupation":1.0, "interest":0.5, "nationality":0.7}
-	cats = extract_category_tokens(rec)
-	v_edu = mean_vector(model, cats["education"]) * cat_weights["education"]
-	v_occ = mean_vector(model, cats["occupation"]) * cat_weights["occupation"]
-	v_int = mean_vector(model, cats["interest"]) * cat_weights["interest"]
-	v_nat = mean_vector(model, cats["nationality"]) * cat_weights["nationality"]
-	return np.concatenate([v_edu, v_occ, v_int, v_nat], axis=0)
+        if cat_weights is None:
+                cat_weights = {"education":1.0, "occupation":1.0, "interest":0.5, "nationality":0.7}
+        cats = extract_category_tokens(rec)
+        v_edu = mean_vector(model, cats["education"]) * cat_weights["education"]
+        v_occ = mean_vector(model, cats["occupation"]) * cat_weights["occupation"]
+        v_int = mean_vector(model, cats["interest"]) * cat_weights["interest"]
+        v_nat = mean_vector(model, cats["nationality"]) * cat_weights["nationality"]
+        return np.concatenate([v_edu, v_occ, v_int, v_nat], axis=0)
 
 def find_similar_astronauts(user_profile: Dict[str, Any],
-							model_path: str = r"C:\Users\ltkie\OneDrive\Documents\UNC\Fall25\CDC25\Model\word2vec_people_categories.model",
-							df_path: str = r"C:\Users\ltkie\OneDrive\Documents\UNC\Fall25\CDC25\Model\Data Analysis\astronauts_with_roles.pkl",
-							top_k: int = 3) -> Dict[str, Any]:
-	"""
-	Given a user profile dict, return top_k most similar astronauts and role similarity scores.
-	Returns a dict with keys: 'top_astronauts', 'role_scores'.
-	"""
-	# Load model and data
-	model = Word2Vec.load(model_path)
-	df = pd.read_pickle(df_path)
-	# Embed user
-	user_emb = embed_person(model, user_profile)
-	
-	# Role similarity
-	role_groups = df.groupby("roles")
-	role_corr = {}
-	for role, group in role_groups:
-		role_embs = np.vstack(group["embedding_concat"].values)
-		sims = cosine_similarity(user_emb.reshape(1, -1), role_embs).ravel()
-		role_corr[role] = float(np.mean(sims)) if len(sims) > 0 else 0.0
-		role_corr = {role: round(score, 2) for role, score in role_corr.items()}
+                                                        model_path: str = None,
+                                                        df_path: str = None,
+                                                        top_k: int = 3) -> Dict[str, Any]:
+        """
+        Given a user profile dict, return top_k most similar astronauts and role similarity scores.
+        Returns a dict with keys: 'top_astronauts', 'role_scores'.
+        """
+        import os
+        
+        # Set default paths relative to current file location
+        if model_path is None:
+            model_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "word2vec_people_categories.model")
+        if df_path is None:
+            df_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "Data Analysis", "astronauts_with_roles.pkl")
+        
+        # Load model and data
+        model = Word2Vec.load(model_path)
+        df = pd.read_pickle(df_path)
+        # Embed user
+        user_emb = embed_person(model, user_profile)
+        
+        # Role similarity
+        role_groups = df.groupby("roles")
+        role_corr = {}
+        for role, group in role_groups:
+                role_embs = np.vstack(group["embedding_concat"].values)
+                sims = cosine_similarity(user_emb.reshape(1, -1), role_embs).ravel()
+                role_corr[role] = float(np.mean(sims)) if len(sims) > 0 else 0.0
+                role_corr = {role: round(score, 2) for role, score in role_corr.items()}
 
-	# Astronaut similarity
-	astro_mat = np.vstack(df["embedding_concat"].values)
-	sims = cosine_similarity(user_emb.reshape(1, -1), astro_mat).ravel()
-	rank_idx = np.argsort(-sims)[:top_k]
-	top_astronauts = []
-	for idx in rank_idx:
-		astro = df.iloc[idx].to_dict()
-		astro["similarity"] = float(sims[idx])
-		astro = {k: v for k, v in astro.items() if k != "embedding_concat"}
-		top_astronauts.append(astro)
-	return {"top_astronauts": top_astronauts, "role_scores": role_corr}
+        # Astronaut similarity
+        astro_mat = np.vstack(df["embedding_concat"].values)
+        sims = cosine_similarity(user_emb.reshape(1, -1), astro_mat).ravel()
+        
+        # Get unique astronauts by name to avoid duplicates
+        seen_names = set()
+        top_astronauts = []
+        
+        # Sort by similarity score (descending) and get unique astronauts
+        sorted_indices = np.argsort(-sims)
+        
+        for idx in sorted_indices:
+                if len(top_astronauts) >= top_k:
+                        break
+                        
+                astro = df.iloc[idx].to_dict()
+                astro_name = astro.get('name', '')
+                
+                # Skip if we've already seen this astronaut or if name is empty
+                if astro_name in seen_names or not astro_name.strip():
+                        continue
+                        
+                seen_names.add(astro_name)
+                astro["similarity"] = float(sims[idx])
+                astro = {k: v for k, v in astro.items() if k != "embedding_concat"}
+                top_astronauts.append(astro)
+        
+        # If we don't have enough unique astronauts, fill with remaining unique ones
+        if len(top_astronauts) < top_k:
+                for idx in sorted_indices:
+                        if len(top_astronauts) >= top_k:
+                                break
+                                
+                        astro = df.iloc[idx].to_dict()
+                        astro_name = astro.get('name', '')
+                        
+                        # Skip if we've already seen this astronaut or if name is empty
+                        if astro_name in seen_names or not astro_name.strip():
+                                continue
+                                
+                        seen_names.add(astro_name)
+                        astro["similarity"] = float(sims[idx])
+                        astro = {k: v for k, v in astro.items() if k != "embedding_concat"}
+                        top_astronauts.append(astro)
+        
+        return {"top_astronauts": top_astronauts, "role_scores": role_corr}
 
-print(find_similar_astronauts(
-	{
-    "name": "Test Artistic Social Worker",
-    "education": [
-        {"institution": "Royal Academy of Dramatic Art"},
-        {"institution": "London School of Social Work"}
-    ],
-    "occupations": ["Actor", "Poet", "Social Worker"],
-    "interests": ["Painting", "Writing Poetry", "Theatre", "Community Volunteering"],
-    "nationality": "United Kingdom"
-}
-))
+# print(find_similar_astronauts(
+#       {
+#     "name": "Test Artistic Social Worker",
+#     "education": [
+#         {"institution": "Royal Academy of Dramatic Art"},
+#         {"institution": "London School of Social Work"}
+#     ],
+#     "occupations": ["Actor", "Poet", "Social Worker"],
+#     "interests": ["Painting", "Writing Poetry", "Theatre", "Community Volunteering"],
+#     "nationality": "United Kingdom"
+# }
+# ))
