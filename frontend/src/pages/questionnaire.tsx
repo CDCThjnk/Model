@@ -128,7 +128,7 @@ export default function Questionnaire() {
   const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<FormData>()
+  const { register, handleSubmit, watch, formState: { errors }, setValue } = useForm<FormData>()
   
   const totalSteps = 7
 
@@ -137,9 +137,9 @@ export default function Questionnaire() {
     console.log('Current step:', currentStep, 'Total steps:', totalSteps)
     console.log('Raw form data:', data)
     
-    // Allow submission on the last two steps (hobbies or selfie)
-    if (currentStep < totalSteps - 1) {
-      console.log('Not on last step, current step:', currentStep, 'total steps:', totalSteps)
+    // Only allow submission on the final step (selfie step)
+    if (currentStep < totalSteps) {
+      console.log('Not on final step, current step:', currentStep, 'total steps:', totalSteps)
       return
     }
     
@@ -460,9 +460,10 @@ export default function Questionnaire() {
             <div className="max-w-md mx-auto">
               <SelfieCapture
                 onCapture={(imageData) => {
-                  // Store the captured image data
-                  const currentData = watch()
-                  currentData.selfie = imageData
+                  console.log('Captured selfie data:', imageData ? 'IMAGE_DATA_CAPTURED' : 'NO_DATA')
+                  // Properly update form value using setValue
+                  setValue('selfie', imageData)
+                  console.log('Selfie data stored in form')
                 }}
                 register={register}
                 errors={errors}
@@ -546,7 +547,7 @@ export default function Questionnaire() {
                   <span>Previous</span>
                 </button>
                 
-                {currentStep < totalSteps - 1 ? (
+                {currentStep < totalSteps ? (
                   <button
                     type="button"
                     onClick={nextStep}
