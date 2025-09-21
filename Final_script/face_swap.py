@@ -88,11 +88,11 @@ def process_face_swap(selfie_base64: str, astronaut_suit_path: str = None) -> st
         # These coordinates are based on the CDC spacesuit image provided
         suit_height, suit_width = suit_img.shape[:2]
         
-        # Visor area - adjusted for proper placement behind helmet glass
-        visor_x = int(suit_width * 0.30)  # 30% from left (more centered)
-        visor_y = int(suit_height * 0.18)  # 18% from top (slightly lower)
-        visor_width = int(suit_width * 0.40)  # 40% of image width (smaller to fit behind visor)
-        visor_height = int(suit_height * 0.35)  # 35% of image height (smaller to fit behind visor)
+        # Visor area - moved up and positioned behind helmet glass opening
+        visor_x = int(suit_width * 0.32)  # 32% from left (centered in helmet)
+        visor_y = int(suit_height * 0.10)  # 10% from top (moved significantly up)
+        visor_width = int(suit_width * 0.36)  # 36% of image width (fits helmet opening)
+        visor_height = int(suit_height * 0.32)  # 32% of image height (proper proportion)
         
         # Resize face to fit visor area
         face_resized = cv2.resize(face_crop, (visor_width, visor_height))
@@ -112,11 +112,11 @@ def process_face_swap(selfie_base64: str, astronaut_suit_path: str = None) -> st
         # Create the face region with transparency blend
         face_region = result_img[visor_y:visor_y + visor_height, visor_x:visor_x + visor_width]
         
-        # Blend the face into the background (behind helmet glass effect)
+        # Place face completely behind the helmet (replace background in visor area)
         mask_3channel = cv2.merge([mask, mask, mask]) / 255.0
-        blended_region = face_masked.astype(np.float32) * mask_3channel + face_region.astype(np.float32) * (1 - mask_3channel * 0.8)  # 80% face visibility
         
-        visor_final = np.clip(blended_region, 0, 255).astype(np.uint8)
+        # Replace the visor area completely with the face (behind effect)
+        visor_final = face_masked.astype(np.uint8)
         
         # Replace visor area in suit image
         result_img = suit_img.copy()
